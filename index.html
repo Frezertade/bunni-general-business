@@ -330,6 +330,7 @@
       .stat-item .number { font-size: 32px; }
       .about-grid { grid-template-columns: 1fr; }
       .services-grid, .products-grid { grid-template-columns: 1fr; }
+      #packaging > .container > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
       .process-steps { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -540,8 +541,8 @@
         </div>
         <div class="service-card reveal">
           <div class="service-icon">🏪</div>
-          <h3>Local Distribution</h3>
-          <p>Domestic distribution of processed coffee products throughout Ethiopia, serving retailers, hotels, restaurants, and cafes across the country.</p>
+          <h3>Bulk Distribution in Ethiopia</h3>
+          <p>Large-scale domestic distribution of roasted and green coffee across Ethiopia. We supply supermarkets, hotels, restaurants, cafes, and wholesale buyers with bulk orders from 50kg bags to full container loads.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">🔬</div>
@@ -550,8 +551,8 @@
         </div>
         <div class="service-card reveal">
           <div class="service-icon">📦</div>
-          <h3>Custom Packaging</h3>
-          <p>Private label and custom packaging solutions for brands looking to offer authentic Ethiopian coffee under their own label.</p>
+          <h3>Retail & Custom Packaging</h3>
+          <p>Available in 250g, 500g, and 1kg retail bags plus 50kg bulk sacks. Private label and custom branding available for distributors and retailers worldwide.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">🌱</div>
@@ -638,6 +639,147 @@
             <p>Bold and exotic with distinctive blueberry and dark fruit notes. Sun-dried for a wild, natural character that's uniquely Ethiopian.</p>
             <div class="tags"><span class="tag">Blueberry</span><span class="tag">Wild</span><span class="tag">Sun-dried</span></div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGING -->
+  <section id="packaging" class="services" style="background: var(--cream);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Packaging</span>
+        <h2>Available Sizes</h2>
+        <p>From retail shelves to warehouse floors — we package for every need.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+        <!-- 250g -->
+        <div class="service-card reveal" style="text-align: center; padding: 30px 20px;">
+          <svg viewBox="0 0 160 220" xmlns="http://www.w3.org/2000/svg" style="width: 120px; margin: 0 auto 16px;">
+            <defs>
+              <linearGradient id="pkg1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5C2D0E"/>
+                <stop offset="100%" stop-color="#3D1F0E"/>
+              </linearGradient>
+            </defs>
+            <!-- Bag shape -->
+            <path d="M30 40 L30 190 Q30 200 40 200 L120 200 Q130 200 130 190 L130 40 Q130 30 120 25 L80 10 L40 25 Q30 30 30 40Z" fill="url(#pkg1)" stroke="#2C1810" stroke-width="1.5"/>
+            <!-- Top fold -->
+            <path d="M40 25 L80 10 L120 25" fill="none" stroke="#8B4513" stroke-width="1.5"/>
+            <path d="M35 35 L125 35" stroke="#8B4513" stroke-width="1" opacity="0.5"/>
+            <!-- Label area -->
+            <rect x="42" y="60" width="76" height="100" rx="6" fill="#FFF8F0" opacity="0.9"/>
+            <!-- Logo on label -->
+            <rect x="62" y="68" width="36" height="22" rx="4" fill="#8B4513"/>
+            <text x="80" y="84" text-anchor="middle" font-family="serif" font-size="11" font-weight="bold" fill="#FFF8F0">B</text>
+            <text x="80" y="102" text-anchor="middle" font-family="serif" font-size="8" font-weight="bold" fill="#5C2D0E">BUNNI</text>
+            <text x="80" y="115" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#8B4513">ETHIOPIAN COFFEE</text>
+            <!-- Coffee bean icon -->
+            <g transform="translate(68, 120) scale(0.4)">
+              <ellipse cx="30" cy="30" rx="22" ry="30" fill="#8B4513" opacity="0.3"/>
+              <path d="M30 4 Q27 17 30 30 Q33 43 30 56" stroke="#5C2D0E" stroke-width="2" fill="none"/>
+            </g>
+            <text x="80" y="150" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#5C2D0E">250g</text>
+            <!-- Seal -->
+            <circle cx="80" y="180" r="10" fill="#E8920D" opacity="0.8"/>
+            <text x="80" y="183" text-anchor="middle" font-family="sans-serif" font-size="5" fill="white" font-weight="bold">ECX</text>
+          </svg>
+          <h3 style="font-size: 20px; margin-bottom: 8px;">250g Retail</h3>
+          <p style="font-size: 14px; color: var(--text-muted);">Perfect for specialty shops, cafes, and individual consumers. Resealable valve bag.</p>
+        </div>
+        <!-- 500g -->
+        <div class="service-card reveal" style="text-align: center; padding: 30px 20px;">
+          <svg viewBox="0 0 170 230" xmlns="http://www.w3.org/2000/svg" style="width: 130px; margin: 0 auto 16px;">
+            <defs>
+              <linearGradient id="pkg2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#6B3A1F"/>
+                <stop offset="100%" stop-color="#4A2508"/>
+              </linearGradient>
+            </defs>
+            <path d="M25 42 L25 195 Q25 205 35 205 L135 205 Q145 205 145 195 L145 42 Q145 32 135 27 L85 10 L35 27 Q25 32 25 42Z" fill="url(#pkg2)" stroke="#2C1810" stroke-width="1.5"/>
+            <path d="M35 27 L85 10 L135 27" fill="none" stroke="#A0522D" stroke-width="1.5"/>
+            <path d="M30 37 L140 37" stroke="#A0522D" stroke-width="1" opacity="0.5"/>
+            <rect x="37" y="58" width="96" height="108" rx="6" fill="#FFF8F0" opacity="0.9"/>
+            <rect x="57" y="66" width="56" height="26" rx="4" fill="#8B4513"/>
+            <text x="85" y="84" text-anchor="middle" font-family="serif" font-size="13" font-weight="bold" fill="#FFF8F0">BUNNI</text>
+            <text x="85" y="106" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#8B4513">PREMIUM ETHIOPIAN</text>
+            <text x="85" y="116" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#8B4513">ARABICA COFFEE</text>
+            <g transform="translate(62, 122) scale(0.5)">
+              <ellipse cx="20" cy="25" rx="16" ry="22" fill="#8B4513" opacity="0.3"/>
+              <path d="M20 5 Q18 15 20 25 Q22 35 20 45" stroke="#5C2D0E" stroke-width="1.5" fill="none"/>
+              <ellipse cx="45" cy="25" rx="16" ry="22" fill="#8B4513" opacity="0.3"/>
+              <path d="M45 5 Q43 15 45 25 Q47 35 45 45" stroke="#5C2D0E" stroke-width="1.5" fill="none"/>
+            </g>
+            <text x="85" y="155" text-anchor="middle" font-family="serif" font-size="12" font-weight="bold" fill="#5C2D0E">500g</text>
+            <circle cx="85" y="185" r="11" fill="#E8920D" opacity="0.8"/>
+            <text x="85" y="188" text-anchor="middle" font-family="sans-serif" font-size="5" fill="white" font-weight="bold">ECX</text>
+          </svg>
+          <h3 style="font-size: 20px; margin-bottom: 8px;">500g Retail</h3>
+          <p style="font-size: 14px; color: var(--text-muted);">Our bestseller. Ideal for supermarkets, hotels, and restaurants. Nitrogen-flushed freshness.</p>
+        </div>
+        <!-- 1kg -->
+        <div class="service-card reveal" style="text-align: center; padding: 30px 20px;">
+          <svg viewBox="0 0 180 240" xmlns="http://www.w3.org/2000/svg" style="width: 140px; margin: 0 auto 16px;">
+            <defs>
+              <linearGradient id="pkg3" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8B4513"/>
+                <stop offset="100%" stop-color="#5C2D0E"/>
+              </linearGradient>
+            </defs>
+            <path d="M20 45 L20 200 Q20 212 32 212 L148 212 Q160 212 160 200 L160 45 Q160 33 148 28 L90 8 L32 28 Q20 33 20 45Z" fill="url(#pkg3)" stroke="#2C1810" stroke-width="1.5"/>
+            <path d="M32 28 L90 8 L148 28" fill="none" stroke="#A0522D" stroke-width="1.5"/>
+            <path d="M25 40 L155 40" stroke="#A0522D" stroke-width="1" opacity="0.5"/>
+            <rect x="32" y="55" width="116" height="120" rx="8" fill="#FFF8F0" opacity="0.9"/>
+            <rect x="52" y="63" width="76" height="30" rx="5" fill="#8B4513"/>
+            <text x="90" y="83" text-anchor="middle" font-family="serif" font-size="15" font-weight="bold" fill="#FFF8F0">BUNNI</text>
+            <text x="90" y="110" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#8B4513">SINGLE ORIGIN</text>
+            <text x="90" y="122" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#8B4513">ETHIOPIAN ARABICA</text>
+            <g transform="translate(55, 128) scale(0.55)">
+              <ellipse cx="20" cy="22" rx="16" ry="22" fill="#8B4513" opacity="0.25"/>
+              <ellipse cx="45" cy="22" rx="16" ry="22" fill="#8B4513" opacity="0.25"/>
+              <ellipse cx="70" cy="22" rx="16" ry="22" fill="#8B4513" opacity="0.25"/>
+            </g>
+            <text x="90" y="162" text-anchor="middle" font-family="serif" font-size="14" font-weight="bold" fill="#5C2D0E">1 KG</text>
+            <circle cx="90" y="192" r="12" fill="#E8920D" opacity="0.8"/>
+            <text x="90" y="195" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="white" font-weight="bold">ECX</text>
+          </svg>
+          <h3 style="font-size: 20px; margin-bottom: 8px;">1kg Retail</h3>
+          <p style="font-size: 14px; color: var(--text-muted);">Family size and cafe supply. Premium flat-bottom bag with one-way valve and zipper seal.</p>
+        </div>
+        <!-- 50kg Bulk -->
+        <div class="service-card reveal" style="text-align: center; padding: 30px 20px;">
+          <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" style="width: 150px; margin: 0 auto 16px;">
+            <defs>
+              <linearGradient id="pkg4" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#A0522D"/>
+                <stop offset="80%" stop-color="#6B3A1F"/>
+              </linearGradient>
+            </defs>
+            <!-- Large jute sack -->
+            <path d="M35 30 L25 200 Q25 215 45 218 L155 218 Q175 215 175 200 L165 30 Q165 18 150 15 L100 5 L50 15 Q35 18 35 30Z" fill="url(#pkg4)" stroke="#4A2508" stroke-width="2"/>
+            <!-- Texture lines -->
+            <path d="M40 50 L40 200" stroke="#5C2D0E" stroke-width="0.5" opacity="0.3"/>
+            <path d="M60 45 L58 205" stroke="#5C2D0E" stroke-width="0.5" opacity="0.3"/>
+            <path d="M80 42 L78 210" stroke="#5C2D0E" stroke-width="0.5" opacity="0.3"/>
+            <path d="M100 40 L100 212" stroke="#5C2D0E" stroke-width="0.5" opacity="0.3"/>
+            <path d="M120 42 L122 210" stroke="#5C2D0E" stroke-width="0.5" opacity="0.3"/>
+            <path d="M140 45 L142 205" stroke="#5C2D0E" stroke-width="0.5" opacity="0.3"/>
+            <path d="M160 50 L160 200" stroke="#5C2D0E" stroke-width="0.5" opacity="0.3"/>
+            <!-- Tie at top -->
+            <path d="M80 20 Q100 8 120 20" fill="none" stroke="#4A2508" stroke-width="3" stroke-linecap="round"/>
+            <!-- Label stamp -->
+            <rect x="50" y="70" width="100" height="90" rx="4" fill="#FFF8F0" opacity="0.85"/>
+            <text x="100" y="95" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" fill="#5C2D0E">BUNNI</text>
+            <text x="100" y="110" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#8B4513">ETHIOPIAN GREEN COFFEE</text>
+            <line x1="60" y1="118" x2="140" y2="118" stroke="#8B4513" stroke-width="0.5" opacity="0.4"/>
+            <text x="100" y="135" text-anchor="middle" font-family="serif" font-size="22" font-weight="bold" fill="#5C2D0E">50 KG</text>
+            <text x="100" y="150" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#E8920D" font-weight="600">NET WEIGHT</text>
+            <!-- Export markings -->
+            <text x="100" y="185" text-anchor="middle" font-family="monospace" font-size="8" fill="#FFF8F0" opacity="0.6">ORIGIN: ETHIOPIA</text>
+            <text x="100" y="198" text-anchor="middle" font-family="monospace" font-size="8" fill="#FFF8F0" opacity="0.6">GRADE: G1 / G2</text>
+          </svg>
+          <h3 style="font-size: 20px; margin-bottom: 8px;">50kg Bulk Sack</h3>
+          <p style="font-size: 14px; color: var(--text-muted);">Export-grade GrainPro-lined jute bags. Green beans for roasters, importers, and bulk distributors worldwide.</p>
         </div>
       </div>
     </div>
