@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bunni General Business PLC — Premium Ethiopian Coffee Export & Distribution</title>
+  <meta name="description" content="Bunni General Business PLC exports and distributes premium Ethiopian coffee worldwide. From the birthplace of coffee to your cup.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brown: #8B4513;
+      --brown-dark: #5C2D0E;
+      --brown-light: #A0522D;
+      --orange: #E8920D;
+      --orange-light: #F5A623;
+      --cream: #FFF8F0;
+      --cream-dark: #F5E6D3;
+      --text-dark: #2C1810;
+      --text-muted: #6B4F3A;
+      --bg-dark: #1A0E08;
+      --bg-section: #F9F0E6;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(26, 14, 8, 0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(139, 69, 19, 0.3);
+      transition: all 0.3s;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px; max-width: 1200px; margin: 0 auto;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--cream);
+    }
+    .nav-logo svg { width: 40px; height: 40px; }
+    .nav-logo span { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--cream-dark); text-decoration: none; font-size: 14px;
+      font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+      transition: color 0.3s; position: relative;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0;
+      height: 2px; background: var(--orange); transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--brown), var(--orange));
+      color: white; padding: 10px 24px; border-radius: 6px;
+      text-decoration: none; font-weight: 600; font-size: 14px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(232, 146, 13, 0.4); }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--cream); transition: all 0.3s; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, #2C1810 50%, #3D1F0E 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(139, 69, 19, 0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 30% 80%, rgba(232, 146, 13, 0.08) 0%, transparent 50%);
+    }
+    .hero-pattern {
+      position: absolute; inset: 0; opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-rule='evenodd'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content {
+      position: relative; z-index: 2; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      padding: 120px 0 80px;
+    }
+    .hero-text h1 {
+      font-size: 56px; color: var(--cream); line-height: 1.15;
+      margin-bottom: 24px; font-weight: 800;
+    }
+    .hero-text h1 .highlight {
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-text p {
+      font-size: 18px; color: rgba(255,248,240,0.7); line-height: 1.8;
+      margin-bottom: 36px; max-width: 500px;
+    }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brown), var(--orange));
+      color: white; padding: 16px 36px; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 16px;
+      transition: all 0.3s; border: none; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(232, 146, 13, 0.4); }
+    .btn-outline {
+      border: 2px solid rgba(255,248,240,0.3); color: var(--cream);
+      padding: 14px 36px; border-radius: 8px; text-decoration: none;
+      font-weight: 600; font-size: 16px; transition: all 0.3s;
+      background: transparent; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* Hero visual - coffee beans illustration */
+    .hero-visual {
+      position: relative; display: flex; justify-content: center; align-items: center;
+    }
+    .hero-visual svg { width: 100%; max-width: 500px; }
+    .hero-badge {
+      position: absolute; bottom: 20px; right: 20px;
+      background: rgba(26, 14, 8, 0.9); border: 1px solid rgba(139, 69, 19, 0.4);
+      border-radius: 12px; padding: 16px 20px; backdrop-filter: blur(8px);
+    }
+    .hero-badge .number { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--orange); font-weight: 700; }
+    .hero-badge .label { font-size: 12px; color: rgba(255,248,240,0.6); margin-top: 2px; }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      background: var(--brown-dark); padding: 40px 0;
+      border-top: 3px solid var(--orange);
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center;
+    }
+    .stat-item .number {
+      font-family: 'Playfair Display', serif; font-size: 42px;
+      font-weight: 700; color: var(--orange); margin-bottom: 4px;
+    }
+    .stat-item .label { font-size: 14px; color: rgba(255,248,240,0.6); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ===== ABOUT ===== */
+    .about { padding: 100px 0; background: var(--cream); }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-tag {
+      display: inline-block; background: rgba(139, 69, 19, 0.1);
+      color: var(--brown); padding: 8px 20px; border-radius: 30px;
+      font-size: 13px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 1.5px; margin-bottom: 16px;
+    }
+    .section-header h2 { font-size: 42px; color: var(--text-dark); margin-bottom: 16px; }
+    .section-header p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-image {
+      background: linear-gradient(135deg, var(--brown-dark), var(--brown));
+      border-radius: 20px; padding: 40px; aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .about-image::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(232, 146, 13, 0.1) 0%, transparent 70%);
+    }
+    .about-text h3 { font-size: 28px; color: var(--text-dark); margin-bottom: 16px; }
+    .about-text p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+    .about-features { list-style: none; margin-top: 24px; }
+    .about-features li {
+      display: flex; align-items: flex-start; gap: 12px; padding: 12px 0;
+      border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    .about-features li .icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(139, 69, 19, 0.1); display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+      color: var(--brown); font-size: 16px;
+    }
+    .about-features li .text { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+    .about-features li .text strong { color: var(--text-dark); }
+
+    /* ===== SERVICES ===== */
+    .services { padding: 100px 0; background: var(--bg-section); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .service-card {
+      background: white; border-radius: 16px; padding: 40px 30px;
+      border: 1px solid rgba(139, 69, 19, 0.1); transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(139, 69, 19, 0.12);
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--brown), var(--orange));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 60px; height: 60px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(232, 146, 13, 0.1));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px; font-size: 28px;
+    }
+    .service-card h3 { font-size: 22px; color: var(--text-dark); margin-bottom: 12px; }
+    .service-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+
+    /* ===== PRODUCTS / COFFEE ===== */
+    .products { padding: 100px 0; background: var(--cream); }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .product-card {
+      background: white; border-radius: 20px; overflow: hidden;
+      border: 1px solid rgba(139, 69, 19, 0.1); transition: all 0.3s;
+    }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(139, 69, 19, 0.15); }
+    .product-image {
+      aspect-ratio: 4/3; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .product-info { padding: 24px; }
+    .product-info h3 { font-size: 20px; color: var(--text-dark); margin-bottom: 8px; }
+    .product-info .origin { font-size: 13px; color: var(--orange); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .product-info p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+    .product-info .tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .product-info .tag {
+      background: rgba(139, 69, 19, 0.08); color: var(--brown);
+      padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;
+    }
+
+    /* ===== PROCESS ===== */
+    .process { padding: 100px 0; background: linear-gradient(135deg, var(--bg-dark), #2C1810); }
+    .process .section-header h2 { color: var(--cream); }
+    .process .section-header p { color: rgba(255,248,240,0.6); }
+    .process .section-tag { background: rgba(232, 146, 13, 0.15); color: var(--orange); }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 20px; }
+    .step-card {
+      text-align: center; padding: 30px 20px;
+      border: 1px solid rgba(139, 69, 19, 0.2); border-radius: 16px;
+      background: rgba(255,255,255,0.03); transition: all 0.3s;
+    }
+    .step-card:hover { background: rgba(255,255,255,0.06); border-color: var(--orange); }
+    .step-number {
+      width: 50px; height: 50px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--brown), var(--orange));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px; font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 700; color: white;
+    }
+    .step-card h4 { font-size: 18px; color: var(--cream); margin-bottom: 8px; }
+    .step-card p { font-size: 14px; color: rgba(255,248,240,0.5); line-height: 1.6; }
+
+    /* ===== CONTACT ===== */
+    .contact { padding: 100px 0; background: var(--bg-section); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .contact-info h3 { font-size: 28px; margin-bottom: 16px; }
+    .contact-info p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; }
+    .contact-details { list-style: none; }
+    .contact-details li {
+      display: flex; align-items: center; gap: 12px; padding: 14px 0;
+      border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+      font-size: 15px; color: var(--text-muted);
+    }
+    .contact-details li .icon { font-size: 20px; }
+    .contact-details a { color: var(--brown); text-decoration: none; }
+    .contact-details a:hover { color: var(--orange); }
+    .contact-form {
+      background: white; border-radius: 20px; padding: 40px;
+      border: 1px solid rgba(139, 69, 19, 0.1);
+      box-shadow: 0 10px 40px rgba(139, 69, 19, 0.05);
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 14px 16px; border: 1px solid rgba(139, 69, 19, 0.2);
+      border-radius: 10px; font-size: 15px; font-family: 'Inter', sans-serif;
+      transition: border-color 0.3s; background: var(--cream);
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px rgba(232, 146, 13, 0.1);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--bg-dark); padding: 60px 0 30px;
+      border-top: 3px solid var(--brown);
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand p { color: rgba(255,248,240,0.5); font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 300px; }
+    .footer-col h4 {
+      color: var(--cream); font-size: 14px; text-transform: uppercase;
+      letter-spacing: 1.5px; margin-bottom: 16px; font-family: 'Inter', sans-serif; font-weight: 600;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: rgba(255,248,240,0.5); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+    .footer-col ul a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid rgba(139, 69, 19, 0.2); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bottom p { color: rgba(255,248,240,0.4); font-size: 13px; }
+    .footer-bottom a { color: rgba(255,248,240,0.4); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--orange); }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; padding: 100px 0 60px; }
+      .hero-text h1 { font-size: 36px; }
+      .hero-text p { margin: 0 auto 30px; }
+      .hero-buttons { justify-content: center; }
+      .hero-visual { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .stat-item .number { font-size: 32px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .services-grid, .products-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .form-row { grid-template-columns: 1fr; }
+      .section-header h2 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="8" fill="#8B4513"/>
+          <text x="20" y="27" text-anchor="middle" font-family="Playfair Display,serif" font-size="18" font-weight="bold" fill="#FFF8F0">B</text>
+        </svg>
+        <span>BUNNI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#coffee">Coffee</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Get In Touch</a>
+      <div class="hamburger" onclick="this.classList.toggle('active')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Premium Ethiopian Coffee,<br><span class="highlight">From Origin to World</span></h1>
+          <p>Bunni General Business PLC is a leading Ethiopian coffee exporter and distributor, connecting the birthplace of coffee with markets worldwide. We source, process, and deliver the finest beans from Ethiopia's legendary growing regions.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">☕ Request a Sample</a>
+            <a href="#coffee" class="btn-outline">Explore Our Coffees</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            <!-- Coffee bean cluster illustration -->
+            <defs>
+              <linearGradient id="bean1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#A0522D"/>
+                <stop offset="100%" stop-color="#5C2D0E"/>
+              </linearGradient>
+              <linearGradient id="bean2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8B4513"/>
+                <stop offset="100%" stop-color="#4A2508"/>
+              </linearGradient>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#E8920D" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#E8920D" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="250" cy="250" r="200" fill="url(#glow)"/>
+            <!-- Large bean 1 -->
+            <g transform="translate(200, 150) rotate(-20)">
+              <ellipse cx="50" cy="70" rx="45" ry="65" fill="url(#bean1)"/>
+              <path d="M50 10 Q45 40 50 70 Q55 100 50 130" stroke="#3D1F0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="40" cy="50" rx="10" ry="18" fill="#A0522D" opacity="0.3"/>
+            </g>
+            <!-- Large bean 2 -->
+            <g transform="translate(280, 180) rotate(15)">
+              <ellipse cx="50" cy="70" rx="45" ry="65" fill="url(#bean2)"/>
+              <path d="M50 10 Q45 40 50 70 Q55 100 50 130" stroke="#2C1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="38" cy="50" rx="10" ry="18" fill="#8B4513" opacity="0.3"/>
+            </g>
+            <!-- Medium bean 3 -->
+            <g transform="translate(160, 270) rotate(-40)">
+              <ellipse cx="35" cy="50" rx="32" ry="48" fill="url(#bean1)"/>
+              <path d="M35 6 Q31 28 35 50 Q39 72 35 94" stroke="#3D1F0E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </g>
+            <!-- Medium bean 4 -->
+            <g transform="translate(300, 290) rotate(35)">
+              <ellipse cx="35" cy="50" rx="32" ry="48" fill="url(#bean2)"/>
+              <path d="M35 6 Q31 28 35 50 Q39 72 35 94" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </g>
+            <!-- Small bean 5 -->
+            <g transform="translate(230, 320) rotate(5)">
+              <ellipse cx="25" cy="35" rx="22" ry="33" fill="url(#bean1)"/>
+              <path d="M25 5 Q22 20 25 35 Q28 50 25 65" stroke="#3D1F0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </g>
+            <!-- Steam lines -->
+            <path d="M220 120 Q210 90 225 60 Q240 30 230 0" stroke="#E8920D" stroke-width="2" fill="none" opacity="0.3" stroke-linecap="round"/>
+            <path d="M260 110 Q250 75 265 45 Q280 15 270 -15" stroke="#E8920D" stroke-width="2" fill="none" opacity="0.2" stroke-linecap="round"/>
+            <path d="M300 130 Q290 100 305 70 Q320 40 310 10" stroke="#E8920D" stroke-width="1.5" fill="none" opacity="0.15" stroke-linecap="round"/>
+            <!-- Decorative dots -->
+            <circle cx="140" cy="180" r="4" fill="#E8920D" opacity="0.3"/>
+            <circle cx="380" cy="220" r="3" fill="#E8920D" opacity="0.2"/>
+            <circle cx="350" cy="380" r="5" fill="#E8920D" opacity="0.15"/>
+            <circle cx="160" cy="370" r="3" fill="#E8920D" opacity="0.25"/>
+          </svg>
+          <div class="hero-badge">
+            <div class="number">25+</div>
+            <div class="label">Years of Excellence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="number">25+</div><div class="label">Years Experience</div></div>
+        <div class="stat-item"><div class="number">30+</div><div class="label">Countries Served</div></div>
+        <div class="stat-item"><div class="number">5000+</div><div class="label">Tons Exported/Year</div></div>
+        <div class="stat-item"><div class="number">100%</div><div class="label">Ethiopian Origin</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Bunni</span>
+        <h2>The Birthplace of Coffee</h2>
+        <p>Ethiopia is where coffee was discovered, and Bunni carries forward this proud legacy to the world.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-image">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Ethiopian jebena (coffee pot) illustration -->
+            <defs>
+              <linearGradient id="jebena" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#A0522D"/>
+                <stop offset="100%" stop-color="#5C2D0E"/>
+              </linearGradient>
+            </defs>
+            <!-- Jebena body -->
+            <path d="M200 60 Q160 60 150 100 Q140 140 145 180 Q150 230 180 260 Q200 280 220 260 Q250 230 255 180 Q260 140 250 100 Q240 60 200 60Z" fill="url(#jebena)" stroke="#3D1F0E" stroke-width="2"/>
+            <!-- Neck -->
+            <path d="M190 60 Q195 30 200 20 Q205 30 210 60" fill="url(#jebena)" stroke="#3D1F0E" stroke-width="1.5"/>
+            <!-- Spout -->
+            <path d="M155 120 Q120 100 100 110 Q90 120 95 130" fill="none" stroke="#8B4513" stroke-width="4" stroke-linecap="round"/>
+            <!-- Handle -->
+            <path d="M245 120 Q280 130 290 160 Q295 190 270 200" fill="none" stroke="#8B4513" stroke-width="4" stroke-linecap="round"/>
+            <!-- Decorative pattern -->
+            <path d="M165 150 L235 150" stroke="#E8920D" stroke-width="1.5" opacity="0.6"/>
+            <path d="M160 165 L240 165" stroke="#E8920D" stroke-width="1" opacity="0.4"/>
+            <path d="M165 180 L235 180" stroke="#E8920D" stroke-width="1.5" opacity="0.6"/>
+            <!-- Steam -->
+            <path d="M195 15 Q188 -5 195 -20" stroke="#FFF8F0" stroke-width="1.5" fill="none" opacity="0.4" stroke-linecap="round"/>
+            <path d="M205 10 Q212 -10 205 -25" stroke="#FFF8F0" stroke-width="1.5" fill="none" opacity="0.3" stroke-linecap="round"/>
+            <!-- Ethiopian coffee cups (sini) -->
+            <ellipse cx="120" cy="270" rx="20" ry="8" fill="#8B4513"/>
+            <path d="M100 270 L105 250 L135 250 L140 270" fill="#A0522D" stroke="#5C2D0E" stroke-width="1"/>
+            <ellipse cx="300" cy="270" rx="20" ry="8" fill="#8B4513"/>
+            <path d="M280 270 L285 250 L315 250 L320 270" fill="#A0522D" stroke="#5C2D0E" stroke-width="1"/>
+            <!-- Text -->
+            <text x="200" y="295" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#FFF8F0" opacity="0.6">Traditional Ethiopian Coffee Ceremony</text>
+          </svg>
+        </div>
+        <div class="about-text">
+          <h3>Rooted in Ethiopian Heritage</h3>
+          <p>Bunni General Business PLC was founded with a mission to share Ethiopia's finest coffee with the world. Based in Addis Ababa, we work directly with farming communities across Ethiopia's most celebrated coffee-growing regions.</p>
+          <p>Our name "Bunni" comes from the Amharic word for coffee — a testament to our deep connection to Ethiopia's coffee heritage and culture.</p>
+          <ul class="about-features">
+            <li>
+              <span class="icon">🌍</span>
+              <span class="text"><strong>Global Export Network</strong> — Shipping premium beans to 30+ countries across Europe, Asia, North America, and the Middle East.</span>
+            </li>
+            <li>
+              <span class="icon">🤝</span>
+              <span class="text"><strong>Direct Trade Relationships</strong> — Working hand-in-hand with Ethiopian farmers, ensuring fair prices and sustainable practices.</span>
+            </li>
+            <li>
+              <span class="icon">✅</span>
+              <span class="text"><strong>Quality Certified</strong> — ECX certified, meeting international standards for specialty and commercial grade coffee.</span>
+            </li>
+            <li>
+              <span class="icon">🏭</span>
+              <span class="text"><strong>Full Processing Facilities</strong> — From cherry to green bean, we handle washing, drying, hulling, and grading in-house.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Do</span>
+        <h2>Our Services</h2>
+        <p>End-to-end coffee solutions from farm to your facility.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">🚢</div>
+          <h3>Coffee Export</h3>
+          <p>We export premium Ethiopian green coffee beans to roasters, distributors, and importers worldwide. Bulk and specialty lots available year-round.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🏪</div>
+          <h3>Local Distribution</h3>
+          <p>Domestic distribution of processed coffee products throughout Ethiopia, serving retailers, hotels, restaurants, and cafes across the country.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🔬</div>
+          <h3>Quality Control</h3>
+          <p>Rigorous cupping and grading at every stage. Our Q-graders ensure only the highest quality beans carry the Bunni name.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">📦</div>
+          <h3>Custom Packaging</h3>
+          <p>Private label and custom packaging solutions for brands looking to offer authentic Ethiopian coffee under their own label.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🌱</div>
+          <h3>Sustainable Sourcing</h3>
+          <p>Direct partnerships with farming cooperatives, supporting sustainable agriculture, fair wages, and community development programs.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">📋</div>
+          <h3>Trade Consulting</h3>
+          <p>Expert guidance on Ethiopian coffee trade regulations, ECX procedures, logistics, and market intelligence for international buyers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COFFEE PRODUCTS -->
+  <section id="coffee" class="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Coffee</span>
+        <h2>Premium Ethiopian Origins</h2>
+        <p>From the highlands of Yirgacheffe to the forests of Kaffa — discover Ethiopia's finest.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card reveal">
+          <div class="product-image" style="background: linear-gradient(135deg, #3D1F0E, #6B3A1F);">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(70, 30) rotate(-10)">
+                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#A0522D" opacity="0.8"/>
+                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#3D1F0E" stroke-width="2" fill="none"/>
+              </g>
+              <g transform="translate(100, 40) rotate(10)">
+                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#8B4513" opacity="0.8"/>
+                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#2C1810" stroke-width="2" fill="none"/>
+              </g>
+              <text x="100" y="140" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" fill="#E8920D" font-weight="600">YIRGACHEFFE</text>
+            </svg>
+          </div>
+          <div class="product-info">
+            <div class="origin">Gedeo Zone, Southern Ethiopia</div>
+            <h3>Yirgacheffe</h3>
+            <p>Bright, floral, and citrusy. The jewel of Ethiopian coffee with delicate jasmine notes and a clean, tea-like body.</p>
+            <div class="tags"><span class="tag">Floral</span><span class="tag">Citrus</span><span class="tag">Grade 1</span></div>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-image" style="background: linear-gradient(135deg, #4A2508, #7A3D14);">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(70, 30) rotate(-15)">
+                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#A0522D" opacity="0.8"/>
+                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#3D1F0E" stroke-width="2" fill="none"/>
+              </g>
+              <g transform="translate(100, 35) rotate(20)">
+                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#6B3A1F" opacity="0.8"/>
+                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#2C1810" stroke-width="2" fill="none"/>
+              </g>
+              <text x="100" y="140" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" fill="#E8920D" font-weight="600">SIDAMO</text>
+            </svg>
+          </div>
+          <div class="product-info">
+            <div class="origin">Sidama Zone, Southern Ethiopia</div>
+            <h3>Sidamo</h3>
+            <p>Complex and full-bodied with rich berry undertones, wine-like acidity, and a sweet chocolate finish.</p>
+            <div class="tags"><span class="tag">Berry</span><span class="tag">Chocolate</span><span class="tag">Full Body</span></div>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-image" style="background: linear-gradient(135deg, #2C1810, #5C2D0E);">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(60, 25) rotate(-5)">
+                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#8B4513" opacity="0.8"/>
+                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#3D1F0E" stroke-width="2" fill="none"/>
+              </g>
+              <g transform="translate(95, 35) rotate(15)">
+                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#A0522D" opacity="0.7"/>
+                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#3D1F0E" stroke-width="2" fill="none"/>
+              </g>
+              <text x="100" y="140" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" fill="#E8920D" font-weight="600">HARRAR</text>
+            </svg>
+          </div>
+          <div class="product-info">
+            <div class="origin">Harari Region, Eastern Ethiopia</div>
+            <h3>Harrar</h3>
+            <p>Bold and exotic with distinctive blueberry and dark fruit notes. Sun-dried for a wild, natural character that's uniquely Ethiopian.</p>
+            <div class="tags"><span class="tag">Blueberry</span><span class="tag">Wild</span><span class="tag">Sun-dried</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">How We Work</span>
+        <h2>From Farm to Export</h2>
+        <p>Our meticulous process ensures every bean meets the highest standards.</p>
+      </div>
+      <div class="process-steps">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h4>Sourcing</h4>
+          <p>Direct partnerships with farming communities across Yirgacheffe, Sidamo, Harrar, Guji, and Kaffa regions.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h4>Processing</h4>
+          <p>Washed and natural processing at our own facilities. Careful drying, hulling, and sorting for consistency.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h4>Grading</h4>
+          <p>Professional cupping and ECX grading. Only beans that pass our strict quality checks move forward.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">4</div>
+          <h4>Export</h4>
+          <p>Packaged in GrainPro bags, shipped via Djibouti port. Full documentation and tracking for every shipment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Let's Work Together</h2>
+        <p>Whether you're a roaster, distributor, or retailer — we'd love to hear from you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Bunni General Business PLC</h3>
+          <p>Based in Addis Ababa, Ethiopia, we are your trusted partner for premium Ethiopian coffee. Reach out to discuss bulk orders, samples, or partnership opportunities.</p>
+          <ul class="contact-details">
+            <li><span class="icon">📍</span> Addis Ababa, Ethiopia</li>
+            <li><span class="icon">📧</span> <a href="mailto:info@bunnigeneralbusiness.com">info@bunnigeneralbusiness.com</a></li>
+            <li><span class="icon">📞</span> <a href="tel:+251911000000">+251 91 100 0000</a></li>
+            <li><span class="icon">🕐</span> Mon - Sat: 8:00 AM - 6:00 PM (EAT)</li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xnjjnkrd" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" name="name" required placeholder="John Smith">
+              </div>
+              <div class="form-group">
+                <label>Email *</label>
+                <input type="email" name="email" required placeholder="john@company.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Company</label>
+                <input type="text" name="company" placeholder="Your Company">
+              </div>
+              <div class="form-group">
+                <label>Interest</label>
+                <select name="interest">
+                  <option value="">Select...</option>
+                  <option value="bulk-export">Bulk Export Order</option>
+                  <option value="sample">Request Samples</option>
+                  <option value="private-label">Private Label</option>
+                  <option value="distribution">Distribution Partnership</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea name="message" rows="5" required placeholder="Tell us about your coffee needs..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send Inquiry ☕</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" style="margin-bottom: 8px;">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="8" fill="#8B4513"/>
+              <text x="20" y="27" text-anchor="middle" font-family="Playfair Display,serif" font-size="18" font-weight="bold" fill="#FFF8F0">B</text>
+            </svg>
+            <span>BUNNI</span>
+          </a>
+          <p>Premium Ethiopian coffee export and distribution. Connecting the birthplace of coffee with the world since establishment.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#coffee">Our Coffee</a></li>
+            <li><a href="#process">Process</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Coffee Regions</h4>
+          <ul>
+            <li><a href="#coffee">Yirgacheffe</a></li>
+            <li><a href="#coffee">Sidamo</a></li>
+            <li><a href="#coffee">Harrar</a></li>
+            <li><a href="#coffee">Guji & Kaffa</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@bunnigeneralbusiness.com">Email Us</a></li>
+            <li><a href="#contact">Send Inquiry</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bunni General Business PLC. All rights reserved.</p>
+        <p>Addis Ababa, Ethiopia · <a href="https://www.aetherisinnovations.com" target="_blank">Built by Aetheris Innovations</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal, .service-card, .product-card, .step-card').forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(26, 14, 8, 0.98)';
+      } else {
+        nav.style.background = 'rgba(26, 14, 8, 0.95)';
+      }
+    });
+  </script>
+</body>
+</html>
