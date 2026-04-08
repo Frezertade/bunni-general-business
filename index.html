@@ -6,7 +6,7 @@
   <title>Bunni General Business PLC — Premium Ethiopian Coffee Export & Distribution</title>
   <meta name="description" content="Bunni General Business PLC exports and distributes premium Ethiopian coffee worldwide. From the birthplace of coffee to your cup.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --brown: #8B4513;
@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    h1, h2, h3, h4 { font-family: 'Russo One', sans-serif; }
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
@@ -53,7 +53,7 @@
       text-decoration: none; color: var(--cream);
     }
     .nav-logo svg { width: 40px; height: 40px; }
-    .nav-logo span { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+    .nav-logo span { font-family: 'Russo One', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 2px; }
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
       color: var(--cream-dark); text-decoration: none; font-size: 14px;
@@ -135,7 +135,7 @@
       background: rgba(26, 14, 8, 0.9); border: 1px solid rgba(139, 69, 19, 0.4);
       border-radius: 12px; padding: 16px 20px; backdrop-filter: blur(8px);
     }
-    .hero-badge .number { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--orange); font-weight: 700; }
+    .hero-badge .number { font-family: 'Russo One', sans-serif; font-size: 28px; color: var(--orange); font-weight: 700; }
     .hero-badge .label { font-size: 12px; color: rgba(255,248,240,0.6); margin-top: 2px; }
 
     /* ===== STATS BAR ===== */
@@ -147,7 +147,7 @@
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center;
     }
     .stat-item .number {
-      font-family: 'Playfair Display', serif; font-size: 42px;
+      font-family: 'Russo One', sans-serif; font-size: 42px;
       font-weight: 700; color: var(--orange); margin-bottom: 4px;
     }
     .stat-item .label { font-size: 14px; color: rgba(255,248,240,0.6); text-transform: uppercase; letter-spacing: 1px; }
@@ -255,7 +255,7 @@
       width: 50px; height: 50px; border-radius: 50%;
       background: linear-gradient(135deg, var(--brown), var(--orange));
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px; font-family: 'Playfair Display', serif;
+      margin: 0 auto 16px; font-family: 'Russo One', sans-serif;
       font-size: 22px; font-weight: 700; color: white;
     }
     .step-card h4 { font-size: 18px; color: var(--cream); margin-bottom: 8px; }
@@ -349,9 +349,23 @@
       <a href="#" class="nav-logo">
         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="40" height="40" rx="8" fill="#8B4513"/>
-          <text x="20" y="27" text-anchor="middle" font-family="Playfair Display,serif" font-size="18" font-weight="bold" fill="#FFF8F0">B</text>
+          <!-- Jebena silhouette -->
+          <path d="M20 6 Q18 6 17.5 8 L17 10 Q16 12 16.5 14 L15 14 Q13 14 13 16 Q13 18 15 18 L16.5 18 Q16 20 15.5 24 Q15 28 17 30 Q18 31 20 31 Q22 31 23 30 Q25 28 24.5 24 Q24 20 23.5 18 L25 18 Q27 18 27 16 Q27 14 25 14 L23.5 14 Q24 12 24 10 L23.5 8 Q23 6 21 6 Z" fill="#FFF8F0" opacity="0.9"/>
+          <!-- Spout -->
+          <path d="M15 18 Q12 20 11 22" stroke="#FFF8F0" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.9"/>
+          <!-- Steam lines -->
+          <path d="M19 5 Q18.5 3 19 1" stroke="#E8920D" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M21 5 Q21.5 2.5 21 0.5" stroke="#E8920D" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <!-- Coffee beans -->
+          <ellipse cx="30" cy="28" rx="3" ry="4.5" transform="rotate(-20 30 28)" fill="#FFF8F0" opacity="0.4"/>
+          <path d="M29 24.5 Q30 28 29.5 31" stroke="#8B4513" stroke-width="0.5" fill="none"/>
+          <ellipse cx="33" cy="33" rx="2.5" ry="3.5" transform="rotate(15 33 33)" fill="#FFF8F0" opacity="0.3"/>
+          <path d="M32.5 30 Q33 33 32.5 35.5" stroke="#8B4513" stroke-width="0.5" fill="none"/>
         </svg>
-        <span>BUNNI</span>
+        <div style="display: flex; flex-direction: column;">
+          <span>BUNNI</span>
+          <span style="font-size: 9px; color: var(--orange); letter-spacing: 1px; font-family: 'Inter', sans-serif; font-weight: 500; margin-top: -2px;">RELIABILITY PERSONIFIED</span>
+        </div>
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -495,7 +509,7 @@
             <ellipse cx="300" cy="270" rx="20" ry="8" fill="#8B4513"/>
             <path d="M280 270 L285 250 L315 250 L320 270" fill="#A0522D" stroke="#5C2D0E" stroke-width="1"/>
             <!-- Text -->
-            <text x="200" y="295" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#FFF8F0" opacity="0.6">Traditional Ethiopian Coffee Ceremony</text>
+            <text x="200" y="295" text-anchor="middle" font-family="Russo One,sans-serif" font-size="12" fill="#FFF8F0" opacity="0.6">Traditional Ethiopian Coffee Ceremony</text>
           </svg>
         </div>
         <div class="about-text">
@@ -588,7 +602,7 @@
                 <ellipse cx="30" cy="45" rx="28" ry="42" fill="#8B4513" opacity="0.8"/>
                 <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#2C1810" stroke-width="2" fill="none"/>
               </g>
-              <text x="100" y="140" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" fill="#E8920D" font-weight="600">YIRGACHEFFE</text>
+              <text x="100" y="140" text-anchor="middle" font-family="Russo One,sans-serif" font-size="14" fill="#E8920D" font-weight="600">YIRGACHEFFE</text>
             </svg>
           </div>
           <div class="product-info">
@@ -609,7 +623,7 @@
                 <ellipse cx="30" cy="45" rx="28" ry="42" fill="#6B3A1F" opacity="0.8"/>
                 <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#2C1810" stroke-width="2" fill="none"/>
               </g>
-              <text x="100" y="140" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" fill="#E8920D" font-weight="600">SIDAMO</text>
+              <text x="100" y="140" text-anchor="middle" font-family="Russo One,sans-serif" font-size="14" fill="#E8920D" font-weight="600">SIDAMO</text>
             </svg>
           </div>
           <div class="product-info">
@@ -630,7 +644,7 @@
                 <ellipse cx="30" cy="45" rx="28" ry="42" fill="#A0522D" opacity="0.7"/>
                 <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#3D1F0E" stroke-width="2" fill="none"/>
               </g>
-              <text x="100" y="140" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" fill="#E8920D" font-weight="600">HARRAR</text>
+              <text x="100" y="140" text-anchor="middle" font-family="Russo One,sans-serif" font-size="14" fill="#E8920D" font-weight="600">HARRAR</text>
             </svg>
           </div>
           <div class="product-info">
@@ -885,9 +899,23 @@
           <a href="#" class="nav-logo" style="margin-bottom: 8px;">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="40" height="40" rx="8" fill="#8B4513"/>
-              <text x="20" y="27" text-anchor="middle" font-family="Playfair Display,serif" font-size="18" font-weight="bold" fill="#FFF8F0">B</text>
+              <!-- Jebena silhouette -->
+              <path d="M20 6 Q18 6 17.5 8 L17 10 Q16 12 16.5 14 L15 14 Q13 14 13 16 Q13 18 15 18 L16.5 18 Q16 20 15.5 24 Q15 28 17 30 Q18 31 20 31 Q22 31 23 30 Q25 28 24.5 24 Q24 20 23.5 18 L25 18 Q27 18 27 16 Q27 14 25 14 L23.5 14 Q24 12 24 10 L23.5 8 Q23 6 21 6 Z" fill="#FFF8F0" opacity="0.9"/>
+              <!-- Spout -->
+              <path d="M15 18 Q12 20 11 22" stroke="#FFF8F0" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.9"/>
+              <!-- Steam lines -->
+              <path d="M19 5 Q18.5 3 19 1" stroke="#E8920D" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <path d="M21 5 Q21.5 2.5 21 0.5" stroke="#E8920D" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <!-- Coffee beans -->
+              <ellipse cx="30" cy="28" rx="3" ry="4.5" transform="rotate(-20 30 28)" fill="#FFF8F0" opacity="0.4"/>
+              <path d="M29 24.5 Q30 28 29.5 31" stroke="#8B4513" stroke-width="0.5" fill="none"/>
+              <ellipse cx="33" cy="33" rx="2.5" ry="3.5" transform="rotate(15 33 33)" fill="#FFF8F0" opacity="0.3"/>
+              <path d="M32.5 30 Q33 33 32.5 35.5" stroke="#8B4513" stroke-width="0.5" fill="none"/>
             </svg>
-            <span>BUNNI</span>
+            <div style="display: flex; flex-direction: column;">
+              <span>BUNNI</span>
+              <span style="font-size: 9px; color: var(--orange); letter-spacing: 1px; font-family: 'Inter', sans-serif; font-weight: 500; margin-top: -2px;">RELIABILITY PERSONIFIED</span>
+            </div>
           </a>
           <p>Premium Ethiopian coffee export and distribution. Connecting the birthplace of coffee with the world since establishment.</p>
         </div>
