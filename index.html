@@ -17,12 +17,12 @@
       --orange-light: #F5A623;
       --cream: #FFF8F0;
       --cream-dark: #F5E6D3;
-      --cream-warm: #EDE0D0;
       --text-dark: #2C1810;
       --text-muted: #6B4F3A;
       --bg-dark: #1A0E08;
-      --bg-section: #E8D5BE;
-      --bg-card: #FDF5EC;
+      --bg-section: #F9F0E6;
+      --pkg-brown: #6B3410;
+      --pkg-cream: #FFF8F0;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,7 +32,7 @@
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text-dark);
-      background: var(--cream-dark);
+      background: var(--cream);
       overflow-x: hidden;
     }
 
@@ -158,7 +158,7 @@
 
     /* ===== ABOUT ===== */
     .about {
-      padding: 100px 0; background: var(--cream-warm);
+      padding: 100px 0; background: var(--cream);
       background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%238B4513' stroke-width='0.6' opacity='0.06'%3E%3Cellipse cx='50' cy='60' rx='18' ry='28' transform='rotate(-25 50 60)'/%3E%3Cpath d='M47 36 Q50 60 47 84'/%3E%3Cpath d='M120 30 Q110 50 120 75 Q115 80 108 88'/%3E%3Cpath d='M124 30 Q134 50 124 75 Q129 80 136 88'/%3E%3Cellipse cx='160' cy='150' rx='15' ry='24' transform='rotate(20 160 150)'/%3E%3Cpath d='M158 130 Q160 150 158 170'/%3E%3C/g%3E%3C/svg%3E");
     }
     .section-header { text-align: center; margin-bottom: 60px; }
@@ -204,8 +204,8 @@
     }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
     .service-card {
-      background: var(--bg-card); border-radius: 16px; padding: 40px 30px;
-      border: 1px solid rgba(139, 69, 19, 0.15); transition: all 0.3s;
+      background: white; border-radius: 16px; padding: 40px 30px;
+      border: 1px solid rgba(139, 69, 19, 0.1); transition: all 0.3s;
       position: relative; overflow: hidden;
     }
     .service-card:hover {
@@ -228,11 +228,11 @@
     .service-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
 
     /* ===== PRODUCTS / COFFEE ===== */
-    .products { padding: 100px 0; background: var(--cream-warm); }
+    .products { padding: 100px 0; background: var(--cream); }
     .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
     .product-card {
-      background: var(--bg-card); border-radius: 20px; overflow: hidden;
-      border: 1px solid rgba(139, 69, 19, 0.15); transition: all 0.3s;
+      background: white; border-radius: 20px; overflow: hidden;
+      border: 1px solid rgba(139, 69, 19, 0.1); transition: all 0.3s;
     }
     .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(139, 69, 19, 0.15); }
     .product-image {
@@ -286,9 +286,9 @@
     .contact-details a { color: var(--brown); text-decoration: none; }
     .contact-details a:hover { color: var(--orange); }
     .contact-form {
-      background: var(--bg-card); border-radius: 20px; padding: 40px;
-      border: 1px solid rgba(139, 69, 19, 0.15);
-      box-shadow: 0 10px 40px rgba(139, 69, 19, 0.08);
+      background: white; border-radius: 20px; padding: 40px;
+      border: 1px solid rgba(139, 69, 19, 0.1);
+      box-shadow: 0 10px 40px rgba(139, 69, 19, 0.05);
     }
     .form-group { margin-bottom: 20px; }
     .form-group label { display: block; font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 6px; }
@@ -554,7 +554,7 @@
   </section>
 
   <!-- PRODUCT LINES -->
-  <section id="products" class="services" style="background: var(--cream-warm);">
+  <section id="products" class="services" style="background: var(--cream);">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">What We Offer</span>
@@ -691,16 +691,17 @@
   </section>
 
   <!-- PACKAGING -->
-  <section id="packaging" class="services" style="background: var(--cream-warm);">
+  <section id="packaging" style="padding: 100px 0; background: linear-gradient(135deg, #6B3410 0%, #5C2D0E 40%, #4A2508 100%); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, transparent, #C8962D, #E8920D, #C8962D, transparent);"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Packaging</span>
-        <h2>Available Sizes</h2>
-        <p>From retail shelves to warehouse floors — we package for every need.</p>
+        <span class="section-tag" style="background: rgba(200, 150, 45, 0.2); color: #C8962D;">Packaging</span>
+        <h2 style="color: #FFF8F0;">Available Sizes</h2>
+        <p style="color: rgba(255,248,240,0.65);">From retail shelves to warehouse floors — we package for every need.</p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
         <!-- 250g -->
-        <div class="service-card reveal" style="text-align: center; padding: 30px 20px;">
+        <div class="service-card reveal" style="text-align: center; padding: 30px 20px; background: #FFF8F0; border: 1px solid rgba(200,150,45,0.3);">
           <svg viewBox="0 0 160 220" xmlns="http://www.w3.org/2000/svg" style="width: 120px; margin: 0 auto 16px;">
             <defs>
               <linearGradient id="pkg1" x1="0" y1="0" x2="0" y2="1">
@@ -732,11 +733,11 @@
             <circle cx="80" cy="180" r="10" fill="#E8920D" opacity="0.85"/>
             <text x="80" y="183" text-anchor="middle" font-family="sans-serif" font-size="5" fill="white" font-weight="bold">ECX</text>
           </svg>
-          <h3 style="font-size: 20px; margin-bottom: 8px;">250g Retail</h3>
+          <h3 style="font-size: 20px; margin-bottom: 8px; color: #5C2D0E;">250g Retail</h3>
           <p style="font-size: 14px; color: var(--text-muted);">Perfect for specialty shops, cafes, and individual consumers. Resealable valve bag.</p>
         </div>
         <!-- 500g -->
-        <div class="service-card reveal" style="text-align: center; padding: 30px 20px;">
+        <div class="service-card reveal" style="text-align: center; padding: 30px 20px; background: #FFF8F0; border: 1px solid rgba(200,150,45,0.3);">
           <svg viewBox="0 0 170 230" xmlns="http://www.w3.org/2000/svg" style="width: 130px; margin: 0 auto 16px;">
             <defs>
               <linearGradient id="pkg2" x1="0" y1="0" x2="0" y2="1">
@@ -770,11 +771,11 @@
             <circle cx="85" cy="188" r="11" fill="#E8920D" opacity="0.85"/>
             <text x="85" y="191" text-anchor="middle" font-family="sans-serif" font-size="5" fill="white" font-weight="bold">ECX</text>
           </svg>
-          <h3 style="font-size: 20px; margin-bottom: 8px;">500g Retail</h3>
+          <h3 style="font-size: 20px; margin-bottom: 8px; color: #5C2D0E;">500g Retail</h3>
           <p style="font-size: 14px; color: var(--text-muted);">Our bestseller. Ideal for supermarkets, hotels, and restaurants. Nitrogen-flushed freshness.</p>
         </div>
         <!-- 1kg -->
-        <div class="service-card reveal" style="text-align: center; padding: 30px 20px;">
+        <div class="service-card reveal" style="text-align: center; padding: 30px 20px; background: #FFF8F0; border: 1px solid rgba(200,150,45,0.3);">
           <svg viewBox="0 0 180 240" xmlns="http://www.w3.org/2000/svg" style="width: 140px; margin: 0 auto 16px;">
             <defs>
               <linearGradient id="pkg3" x1="0" y1="0" x2="0" y2="1">
@@ -808,11 +809,11 @@
             <circle cx="90" cy="195" r="12" fill="#E8920D" opacity="0.85"/>
             <text x="90" y="198" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="white" font-weight="bold">ECX</text>
           </svg>
-          <h3 style="font-size: 20px; margin-bottom: 8px;">1kg Retail</h3>
+          <h3 style="font-size: 20px; margin-bottom: 8px; color: #5C2D0E;">1kg Retail</h3>
           <p style="font-size: 14px; color: var(--text-muted);">Family size and cafe supply. Premium flat-bottom bag with one-way valve and zipper seal.</p>
         </div>
         <!-- 50kg Bulk -->
-        <div class="service-card reveal" style="text-align: center; padding: 30px 20px;">
+        <div class="service-card reveal" style="text-align: center; padding: 30px 20px; background: #FFF8F0; border: 1px solid rgba(200,150,45,0.3);">
           <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" style="width: 150px; margin: 0 auto 16px;">
             <defs>
               <linearGradient id="pkg4" x1="0" y1="0" x2="0" y2="1">
@@ -849,7 +850,7 @@
             <text x="100" y="188" text-anchor="middle" font-family="monospace" font-size="7" fill="#FFF8F0" opacity="0.6">ORIGIN: ETHIOPIA</text>
             <text x="100" y="200" text-anchor="middle" font-family="monospace" font-size="7" fill="#FFF8F0" opacity="0.6">GRADE: G1 / G2</text>
           </svg>
-          <h3 style="font-size: 20px; margin-bottom: 8px;">50kg Bulk Sack</h3>
+          <h3 style="font-size: 20px; margin-bottom: 8px; color: #5C2D0E;">50kg Bulk Sack</h3>
           <p style="font-size: 14px; color: var(--text-muted);">Export-grade GrainPro-lined jute bags. Green beans for roasters, importers, and bulk distributors worldwide.</p>
         </div>
       </div>
