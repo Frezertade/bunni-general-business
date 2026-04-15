@@ -1,843 +1,1320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bunni General Business PLC — Premium Ethiopian Coffee Export & Distribution</title>
-  <meta name="description" content="Bunni General Business PLC exports and distributes premium Ethiopian coffee worldwide. From the birthplace of coffee to your cup.">
-  <link rel="icon" type="image/jpeg" href="logo.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bunni General Business PLC — Born Green. Roasted Bunni.</title>
+  <meta name="description" content="Bunni — premium Ethiopian coffee, exported from the birthplace of coffee. በእረንጓዴ በቀለ፣ በቡኒ ተቀላ።" />
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Jost:ital,wght@0,300..700;1,300..700&family=Noto+Serif+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <style>
+    /* ---------- Palette pulled from the packaging ---------- */
     :root {
-      --brown: #8B4513;
-      --brown-dark: #5C2D0E;
-      --brown-light: #A0522D;
-      --orange: #E8920D;
-      --orange-light: #F5A623;
-      --cream: #FFF8F0;
-      --cream-dark: #F5E6D3;
-      --text-dark: #2C1810;
-      --text-muted: #6B4F3A;
-      --bg-dark: #1A0E08;
-      --bg-section: #F9F0E6;
-      --pkg-brown: #6B3410;
-      --pkg-cream: #FFF8F0;
+      --bean: #5B2A0A;           /* deep coffee-bag brown */
+      --bean-deep: #3F1C05;      /* shadow brown */
+      --bean-mid: #7A3A12;       /* mid brown */
+      --bean-warm: #A0522D;      /* warm brown */
+      --ember: #E8920D;          /* packaging orange */
+      --ember-bright: #F5A623;   /* highlight orange */
+      --ember-soft: #F7C579;     /* soft apricot */
+      --cream: #FEF5E7;          /* cream label */
+      --cream-warm: #F9E8CE;     /* warm cream panel */
+      --paper: #FDF8EF;          /* paper */
+      --ink: #2A1508;            /* editorial ink */
+      --ink-soft: #5A3B24;       /* body brown */
+      --line: rgba(42, 21, 8, 0.14);
+      --line-cream: rgba(254, 245, 231, 0.22);
+
+      --display: "Fraunces", "Libre Caslon Display", Georgia, serif;
+      --sans: "Jost", "Inter", system-ui, sans-serif;
+      --amharic: "Noto Serif Ethiopic", "Nyala", serif;
+
+      --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
     body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text-dark);
+      margin: 0;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
       background: var(--cream);
       overflow-x: hidden;
     }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 
-    h1, h2, h3, h4 { font-family: 'Russo One', sans-serif; }
+    ::selection { background: var(--ember); color: var(--bean-deep); }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-    /* ===== NAVBAR ===== */
-    nav {
-      position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(26, 14, 8, 0.95); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(139, 69, 19, 0.3);
-      transition: all 0.3s;
+    /* ---------- Scattered coffee-bean pattern (SVG) ---------- */
+    .beans-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'><g fill='none' stroke='%23E8920D' stroke-width='1.2' stroke-linecap='round'><g transform='translate(60 70) rotate(25)'><ellipse cx='0' cy='0' rx='22' ry='13'/><path d='M -22 0 Q 0 -4 22 0'/></g><g transform='translate(200 40) rotate(-10)'><ellipse cx='0' cy='0' rx='20' ry='11'/><path d='M -20 0 Q 0 -3 20 0'/></g><g transform='translate(360 90) rotate(45)'><ellipse cx='0' cy='0' rx='24' ry='13'/><path d='M -24 0 Q 0 -4 24 0'/></g><g transform='translate(470 180) rotate(-30)'><ellipse cx='0' cy='0' rx='21' ry='12'/><path d='M -21 0 Q 0 -3 21 0'/></g><g transform='translate(110 180) rotate(-55)'><ellipse cx='0' cy='0' rx='23' ry='12'/><path d='M -23 0 Q 0 -3 23 0'/></g><g transform='translate(270 220) rotate(60)'><ellipse cx='0' cy='0' rx='20' ry='11'/><path d='M -20 0 Q 0 -3 20 0'/></g><g transform='translate(420 280) rotate(15)'><ellipse cx='0' cy='0' rx='22' ry='12'/><path d='M -22 0 Q 0 -3 22 0'/></g><g transform='translate(60 300) rotate(30)'><ellipse cx='0' cy='0' rx='21' ry='12'/><path d='M -21 0 Q 0 -3 21 0'/></g><g transform='translate(180 360) rotate(-25)'><ellipse cx='0' cy='0' rx='24' ry='13'/><path d='M -24 0 Q 0 -4 24 0'/></g><g transform='translate(330 400) rotate(70)'><ellipse cx='0' cy='0' rx='22' ry='12'/><path d='M -22 0 Q 0 -3 22 0'/></g><g transform='translate(470 440) rotate(-40)'><ellipse cx='0' cy='0' rx='20' ry='11'/><path d='M -20 0 Q 0 -3 20 0'/></g><g transform='translate(80 470) rotate(10)'><ellipse cx='0' cy='0' rx='23' ry='12'/><path d='M -23 0 Q 0 -3 23 0'/></g></g></svg>");
+      background-size: 520px 520px;
+      opacity: 0.22;
+      mix-blend-mode: multiply;
     }
+    .beans-bg.on-dark { mix-blend-mode: screen; opacity: 0.16; }
+    .beans-bg.sparse { opacity: 0.14; background-size: 640px 640px; }
+
+    /* ---------- Coffee branch illustration (top-left accent) ---------- */
+    .branch-svg { position: absolute; pointer-events: none; }
+    .branch-svg path, .branch-svg ellipse, .branch-svg circle { stroke: var(--ember); fill: none; stroke-width: 1.4; stroke-linecap: round; }
+    .branch-svg.filled ellipse.leaf { fill: var(--ember); opacity: 0.82; stroke: none; }
+    .branch-svg.filled circle.cherry { fill: var(--ember-bright); stroke: none; }
+
+    /* ---------- Layout helpers ---------- */
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); position: relative; }
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--ember);
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--ember); display: inline-block; }
+    .on-dark .eyebrow { color: var(--ember-soft); }
+    .on-dark .eyebrow::before { background: var(--ember-soft); }
+
+    /* ---------- NAV ---------- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      background: rgba(254, 245, 231, 0.72);
+      border-bottom: 1px solid var(--line);
+      transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+    }
+    nav.scrolled { background: rgba(254, 245, 231, 0.92); }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 24px; max-width: 1200px; margin: 0 auto;
+      max-width: 1280px; margin: 0 auto; padding: 14px clamp(20px, 4vw, 56px);
+      gap: 24px;
     }
-    .nav-logo {
+    .brand {
       display: flex; align-items: center; gap: 12px;
-      text-decoration: none; color: var(--cream);
     }
-    .nav-logo svg { width: 40px; height: 40px; }
-    .nav-logo img { height: 48px; width: auto; object-fit: contain; }
-    .nav-logo span { font-family: 'Russo One', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 2px; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .brand-mark {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--bean);
+      display: grid; place-items: center;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px var(--line), 0 6px 18px rgba(91, 42, 10, 0.18);
+    }
+    .brand-mark img { width: 60%; height: 60%; object-fit: contain; filter: brightness(1.15); }
+    .brand-name {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: var(--bean);
+    }
+    .brand-sub {
+      font-family: var(--sans);
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      color: var(--ember);
+      text-transform: uppercase;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex; gap: 28px;
+      list-style: none; margin: 0; padding: 0;
+      font-family: var(--sans);
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
     .nav-links a {
-      color: var(--cream-dark); text-decoration: none; font-size: 14px;
-      font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
-      transition: color 0.3s; position: relative;
+      position: relative; color: var(--ink-soft);
+      padding: 6px 0;
+      transition: color 0.2s var(--ease);
     }
-    .nav-links a:hover { color: var(--orange); }
     .nav-links a::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; width: 0;
-      height: 2px; background: var(--orange); transition: width 0.3s;
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+      height: 1px; background: var(--ember); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s var(--ease);
     }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--bean); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
     .nav-cta {
-      background: linear-gradient(135deg, var(--brown), var(--orange));
-      color: white; padding: 10px 24px; border-radius: 6px;
-      text-decoration: none; font-weight: 600; font-size: 14px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 22px;
+      background: var(--bean);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border-radius: 999px;
+      transition: background 0.25s var(--ease), transform 0.25s var(--ease);
     }
-    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(232, 146, 13, 0.4); }
-    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .hamburger span { width: 24px; height: 2px; background: var(--cream); transition: all 0.3s; }
+    .nav-cta:hover { background: var(--ember); color: var(--bean-deep); transform: translateY(-1px); }
+    .nav-cta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ember); transition: background 0.25s var(--ease); }
+    .nav-cta:hover .dot { background: var(--bean-deep); }
 
-    /* ===== HERO ===== */
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--bean); transition: transform 0.25s var(--ease), opacity 0.2s; }
+
+    /* ---------- HERO — dual-panel packaging split ---------- */
     .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      background: linear-gradient(135deg, #8B4513 0%, #A0622D 40%, #C87D3A 100%);
-      position: relative; overflow: hidden;
+      position: relative;
+      padding-top: 76px;
+      background: var(--cream);
+      overflow: hidden;
     }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(232, 146, 13, 0.2) 0%, transparent 60%),
-                  radial-gradient(ellipse at 30% 80%, rgba(245, 166, 35, 0.15) 0%, transparent 50%),
-                  radial-gradient(ellipse at 50% 30%, rgba(255, 248, 240, 0.08) 0%, transparent 50%);
+    .hero-split {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: clamp(680px, 92vh, 880px);
     }
-    .hero-pattern {
-      position: absolute; inset: 0; opacity: 0.06;
-      background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E8920D' stroke-width='0.8' opacity='0.6'%3E%3Cellipse cx='30' cy='40' rx='12' ry='18' transform='rotate(-20 30 40)'/%3E%3Cpath d='M28 25 Q30 40 28 55' stroke-width='0.5'/%3E%3Cellipse cx='85' cy='75' rx='10' ry='15' transform='rotate(25 85 75)'/%3E%3Cpath d='M83 63 Q85 75 83 87' stroke-width='0.5'/%3E%3Cpath d='M55 15 Q50 25 55 40 Q52 45 48 50' stroke-width='0.6' stroke='%23A0522D'/%3E%3Cpath d='M58 15 Q63 25 58 40 Q61 45 65 50' stroke-width='0.6' stroke='%23A0522D'/%3E%3Cpath d='M48 50 Q53 48 58 50 Q63 52 65 50' stroke-width='0.4' stroke='%23A0522D'/%3E%3Cellipse cx='95' cy='20' rx='8' ry='12' transform='rotate(-10 95 20)'/%3E%3Cpath d='M93 10 Q95 20 93 30' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E");
+    .hero-panel {
+      position: relative;
+      padding: clamp(60px, 8vw, 120px) clamp(30px, 5vw, 88px);
+      display: flex; flex-direction: column; justify-content: space-between;
+      overflow: hidden;
     }
-    .hero-content {
-      position: relative; z-index: 2; display: grid;
-      grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-      padding: 120px 0 80px;
+    /* Carve a safe-zone on the inner edge so content never collides with the cartouche,
+       and a generous outer edge so the vertical label has its own column. */
+    .hero-left  {
+      background: var(--cream);
+      padding-right: clamp(170px, 19vw, 230px);
+      padding-left:  clamp(64px, 7vw, 110px);
     }
-    .hero-text h1 {
-      font-size: 56px; color: var(--cream); line-height: 1.15;
-      margin-bottom: 24px; font-weight: 800;
-    }
-    .hero-text h1 .highlight {
-      background: linear-gradient(135deg, var(--orange), var(--orange-light));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .hero-text p {
-      font-size: 18px; color: rgba(255,248,240,0.7); line-height: 1.8;
-      margin-bottom: 36px; max-width: 500px;
-    }
-    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--brown), var(--orange));
-      color: white; padding: 16px 36px; border-radius: 8px;
-      text-decoration: none; font-weight: 600; font-size: 16px;
-      transition: all 0.3s; border: none; cursor: pointer;
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(232, 146, 13, 0.4); }
-    .btn-outline {
-      border: 2px solid rgba(255,248,240,0.3); color: var(--cream);
-      padding: 14px 36px; border-radius: 8px; text-decoration: none;
-      font-weight: 600; font-size: 16px; transition: all 0.3s;
-      background: transparent; display: inline-flex; align-items: center; gap: 8px;
-    }
-    .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
-
-    /* Hero visual - coffee beans illustration */
-    .hero-visual {
-      position: relative; display: flex; justify-content: center; align-items: center;
-    }
-    .hero-visual svg { width: 100%; max-width: 500px; }
-    .hero-badge {
-      position: absolute; bottom: 20px; right: 20px;
-      background: rgba(26, 14, 8, 0.9); border: 1px solid rgba(139, 69, 19, 0.4);
-      border-radius: 12px; padding: 16px 20px; backdrop-filter: blur(8px);
-    }
-    .hero-badge .number { font-family: 'Russo One', sans-serif; font-size: 28px; color: var(--orange); font-weight: 700; }
-    .hero-badge .label { font-size: 12px; color: rgba(255,248,240,0.6); margin-top: 2px; }
-
-    /* ===== STATS BAR ===== */
-    .stats-bar {
-      background: var(--brown-dark); padding: 40px 0;
-      border-top: 3px solid var(--orange);
-    }
-    .stats-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center;
-    }
-    .stat-item .number {
-      font-family: 'Russo One', sans-serif; font-size: 42px;
-      font-weight: 700; color: var(--orange); margin-bottom: 4px;
-    }
-    .stat-item .label { font-size: 14px; color: rgba(255,248,240,0.6); text-transform: uppercase; letter-spacing: 1px; }
-
-    /* ===== ABOUT ===== */
-    .about {
-      padding: 100px 0;
+    .hero-right {
+      background: var(--bean); color: var(--cream);
+      padding-left:  clamp(170px, 19vw, 230px);
+      padding-right: clamp(64px, 7vw, 110px);
     }
 
-    /* Coffee bean pattern backgrounds */
-    .bg-cream-beans {
-      background-color: #FDF5ED;
-      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cg%3E%3Cpath%20d%3D%22M%2015%205%20Q%2025%2030%2035%2055%20Q%2042%2075%2050%2095%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%208%2022%205%2010%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%2042%2018%2050%208%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2018%2048%2010%2038%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2052%2044%2062%2035%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2028%2076%2018%2068%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2060%2070%2070%2060%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2240%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2262%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2285%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2230%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2272%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-30%20120%2045%29%22%3E%3Cellipse%20cx%3D%22120%22%20cy%3D%2245%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20120%2025%20Q%20117%2045%20120%2065%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2815%20280%2030%29%22%3E%3Cellipse%20cx%3D%22280%22%20cy%3D%2230%22%20rx%3D%2212%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20280%2012%20Q%20277%2030%20280%2048%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-45%20350%2080%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%2280%22%20rx%3D%2216%22%20ry%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%2056%20Q%20347%2080%20350%20104%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2825%2060%20130%29%22%3E%3Cellipse%20cx%3D%2260%22%20cy%3D%22130%22%20rx%3D%2213%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2060%20111%20Q%2057%20130%2060%20149%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-10%20200%20110%29%22%3E%3Cellipse%20cx%3D%22200%22%20cy%3D%22110%22%20rx%3D%2215%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20200%2088%20Q%20197%20110%20200%20132%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2840%20320%20150%29%22%3E%3Cellipse%20cx%3D%22320%22%20cy%3D%22150%22%20rx%3D%2214%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20320%20129%20Q%20317%20150%20320%20171%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-35%2090%20220%29%22%3E%3Cellipse%20cx%3D%2290%22%20cy%3D%22220%22%20rx%3D%2216%22%20ry%3D%2226%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2090%20194%20Q%2087%20220%2090%20246%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2855%20250%20200%29%22%3E%3Cellipse%20cx%3D%22250%22%20cy%3D%22200%22%20rx%3D%2212%22%20ry%3D%2217%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20250%20183%20Q%20247%20200%20250%20217%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-20%20370%20220%29%22%3E%3Cellipse%20cx%3D%22370%22%20cy%3D%22220%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20370%20200%20Q%20367%20220%20370%20240%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2810%20150%20280%29%22%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%22280%22%20rx%3D%2218%22%20ry%3D%2225%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20150%20255%20Q%20147%20280%20150%20305%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-50%2040%20320%29%22%3E%3Cellipse%20cx%3D%2240%22%20cy%3D%22320%22%20rx%3D%2213%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2040%20302%20Q%2037%20320%2040%20338%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2830%20300%20300%29%22%3E%3Cellipse%20cx%3D%22300%22%20cy%3D%22300%22%20rx%3D%2215%22%20ry%3D%2223%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20300%20277%20Q%20297%20300%20300%20323%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-15%20180%20350%29%22%3E%3Cellipse%20cx%3D%22180%22%20cy%3D%22350%22%20rx%3D%2214%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20180%20331%20Q%20177%20350%20180%20369%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2845%20350%20350%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%22350%22%20rx%3D%2216%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%20328%20Q%20347%20350%20350%20372%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-40%20240%20370%29%22%3E%3Cellipse%20cx%3D%22240%22%20cy%3D%22370%22%20rx%3D%2212%22%20ry%3D%2216%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20240%20354%20Q%20237%20370%20240%20386%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2820%2080%20380%29%22%3E%3Cellipse%20cx%3D%2280%22%20cy%3D%22380%22%20rx%3D%2215%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2080%20359%20Q%2077%20380%2080%20401%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-25%20130%20170%29%22%3E%3Cellipse%20cx%3D%22130%22%20cy%3D%22170%22%20rx%3D%2213%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20130%20150%20Q%20127%20170%20130%20190%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2835%20380%20160%29%22%3E%3Cellipse%20cx%3D%22380%22%20cy%3D%22160%22%20rx%3D%2214%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20380%20142%20Q%20377%20160%20380%20178%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-      background-size: 400px 400px;
+    .hero-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 20px;
+      position: relative; z-index: 3;
     }
-    .bg-brown-beans {
-      background-color: #6B3410;
-      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cg%3E%3Cpath%20d%3D%22M%2015%205%20Q%2025%2030%2035%2055%20Q%2042%2075%2050%2095%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%208%2022%205%2010%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%2042%2018%2050%208%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2018%2048%2010%2038%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2052%2044%2062%2035%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2028%2076%2018%2068%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2060%2070%2070%2060%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2240%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2262%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2285%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2230%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2272%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-30%20120%2045%29%22%3E%3Cellipse%20cx%3D%22120%22%20cy%3D%2245%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20120%2025%20Q%20117%2045%20120%2065%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2815%20280%2030%29%22%3E%3Cellipse%20cx%3D%22280%22%20cy%3D%2230%22%20rx%3D%2212%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20280%2012%20Q%20277%2030%20280%2048%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-45%20350%2080%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%2280%22%20rx%3D%2216%22%20ry%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%2056%20Q%20347%2080%20350%20104%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2825%2060%20130%29%22%3E%3Cellipse%20cx%3D%2260%22%20cy%3D%22130%22%20rx%3D%2213%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2060%20111%20Q%2057%20130%2060%20149%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-10%20200%20110%29%22%3E%3Cellipse%20cx%3D%22200%22%20cy%3D%22110%22%20rx%3D%2215%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20200%2088%20Q%20197%20110%20200%20132%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2840%20320%20150%29%22%3E%3Cellipse%20cx%3D%22320%22%20cy%3D%22150%22%20rx%3D%2214%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20320%20129%20Q%20317%20150%20320%20171%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-35%2090%20220%29%22%3E%3Cellipse%20cx%3D%2290%22%20cy%3D%22220%22%20rx%3D%2216%22%20ry%3D%2226%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2090%20194%20Q%2087%20220%2090%20246%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2855%20250%20200%29%22%3E%3Cellipse%20cx%3D%22250%22%20cy%3D%22200%22%20rx%3D%2212%22%20ry%3D%2217%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20250%20183%20Q%20247%20200%20250%20217%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-20%20370%20220%29%22%3E%3Cellipse%20cx%3D%22370%22%20cy%3D%22220%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20370%20200%20Q%20367%20220%20370%20240%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2810%20150%20280%29%22%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%22280%22%20rx%3D%2218%22%20ry%3D%2225%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20150%20255%20Q%20147%20280%20150%20305%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-50%2040%20320%29%22%3E%3Cellipse%20cx%3D%2240%22%20cy%3D%22320%22%20rx%3D%2213%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2040%20302%20Q%2037%20320%2040%20338%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2830%20300%20300%29%22%3E%3Cellipse%20cx%3D%22300%22%20cy%3D%22300%22%20rx%3D%2215%22%20ry%3D%2223%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20300%20277%20Q%20297%20300%20300%20323%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-15%20180%20350%29%22%3E%3Cellipse%20cx%3D%22180%22%20cy%3D%22350%22%20rx%3D%2214%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20180%20331%20Q%20177%20350%20180%20369%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2845%20350%20350%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%22350%22%20rx%3D%2216%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%20328%20Q%20347%20350%20350%20372%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-40%20240%20370%29%22%3E%3Cellipse%20cx%3D%22240%22%20cy%3D%22370%22%20rx%3D%2212%22%20ry%3D%2216%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20240%20354%20Q%20237%20370%20240%20386%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2820%2080%20380%29%22%3E%3Cellipse%20cx%3D%2280%22%20cy%3D%22380%22%20rx%3D%2215%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2080%20359%20Q%2077%20380%2080%20401%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-25%20130%20170%29%22%3E%3Cellipse%20cx%3D%22130%22%20cy%3D%22170%22%20rx%3D%2213%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20130%20150%20Q%20127%20170%20130%20190%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2835%20380%20160%29%22%3E%3Cellipse%20cx%3D%22380%22%20cy%3D%22160%22%20rx%3D%2214%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20380%20142%20Q%20377%20160%20380%20178%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-      background-size: 400px 400px;
+    .hero-amh {
+      font-family: var(--amharic);
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      max-width: 280px;
     }
-    .section-header { text-align: center; margin-bottom: 60px; }
-    .section-tag {
-      display: inline-block; background: rgba(139, 69, 19, 0.1);
-      color: var(--brown); padding: 8px 20px; border-radius: 30px;
-      font-size: 13px; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 1.5px; margin-bottom: 16px;
-    }
-    .section-header h2 { font-size: 42px; color: var(--text-dark); margin-bottom: 16px; }
-    .section-header p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.7; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .about-image {
-      background: linear-gradient(135deg, var(--brown-dark), var(--brown));
-      border-radius: 20px; padding: 40px; aspect-ratio: 4/3;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .about-image::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(232, 146, 13, 0.1) 0%, transparent 70%);
-    }
-    .about-text h3 { font-size: 28px; color: var(--text-dark); margin-bottom: 16px; }
-    .about-text p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
-    .about-features { list-style: none; margin-top: 24px; }
-    .about-features li {
-      display: flex; align-items: flex-start; gap: 12px; padding: 12px 0;
-      border-bottom: 1px solid rgba(139, 69, 19, 0.1);
-    }
-    .about-features li .icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: rgba(139, 69, 19, 0.1); display: flex;
-      align-items: center; justify-content: center; flex-shrink: 0;
-      color: var(--brown); font-size: 16px;
-    }
-    .about-features li .text { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
-    .about-features li .text strong { color: var(--text-dark); }
+    .hero-right .hero-amh { color: var(--ember-soft); }
 
-    /* ===== SERVICES ===== */
-    .services {
-      padding: 100px 0;
-      background-color: #6B3410;
-      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cg%3E%3Cpath%20d%3D%22M%2015%205%20Q%2025%2030%2035%2055%20Q%2042%2075%2050%2095%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%208%2022%205%2010%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%2042%2018%2050%208%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2018%2048%2010%2038%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2052%2044%2062%2035%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2028%2076%2018%2068%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2060%2070%2070%2060%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2240%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2262%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2285%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2230%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2272%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23C8862D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-30%20120%2045%29%22%3E%3Cellipse%20cx%3D%22120%22%20cy%3D%2245%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20120%2025%20Q%20117%2045%20120%2065%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2815%20280%2030%29%22%3E%3Cellipse%20cx%3D%22280%22%20cy%3D%2230%22%20rx%3D%2212%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20280%2012%20Q%20277%2030%20280%2048%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-45%20350%2080%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%2280%22%20rx%3D%2216%22%20ry%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%2056%20Q%20347%2080%20350%20104%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2825%2060%20130%29%22%3E%3Cellipse%20cx%3D%2260%22%20cy%3D%22130%22%20rx%3D%2213%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2060%20111%20Q%2057%20130%2060%20149%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-10%20200%20110%29%22%3E%3Cellipse%20cx%3D%22200%22%20cy%3D%22110%22%20rx%3D%2215%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20200%2088%20Q%20197%20110%20200%20132%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2840%20320%20150%29%22%3E%3Cellipse%20cx%3D%22320%22%20cy%3D%22150%22%20rx%3D%2214%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20320%20129%20Q%20317%20150%20320%20171%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-35%2090%20220%29%22%3E%3Cellipse%20cx%3D%2290%22%20cy%3D%22220%22%20rx%3D%2216%22%20ry%3D%2226%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2090%20194%20Q%2087%20220%2090%20246%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2855%20250%20200%29%22%3E%3Cellipse%20cx%3D%22250%22%20cy%3D%22200%22%20rx%3D%2212%22%20ry%3D%2217%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20250%20183%20Q%20247%20200%20250%20217%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-20%20370%20220%29%22%3E%3Cellipse%20cx%3D%22370%22%20cy%3D%22220%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20370%20200%20Q%20367%20220%20370%20240%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2810%20150%20280%29%22%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%22280%22%20rx%3D%2218%22%20ry%3D%2225%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20150%20255%20Q%20147%20280%20150%20305%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-50%2040%20320%29%22%3E%3Cellipse%20cx%3D%2240%22%20cy%3D%22320%22%20rx%3D%2213%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2040%20302%20Q%2037%20320%2040%20338%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2830%20300%20300%29%22%3E%3Cellipse%20cx%3D%22300%22%20cy%3D%22300%22%20rx%3D%2215%22%20ry%3D%2223%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20300%20277%20Q%20297%20300%20300%20323%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-15%20180%20350%29%22%3E%3Cellipse%20cx%3D%22180%22%20cy%3D%22350%22%20rx%3D%2214%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20180%20331%20Q%20177%20350%20180%20369%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2845%20350%20350%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%22350%22%20rx%3D%2216%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%20328%20Q%20347%20350%20350%20372%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-40%20240%20370%29%22%3E%3Cellipse%20cx%3D%22240%22%20cy%3D%22370%22%20rx%3D%2212%22%20ry%3D%2216%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20240%20354%20Q%20237%20370%20240%20386%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2820%2080%20380%29%22%3E%3Cellipse%20cx%3D%2280%22%20cy%3D%22380%22%20rx%3D%2215%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2080%20359%20Q%2077%20380%2080%20401%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-25%20130%20170%29%22%3E%3Cellipse%20cx%3D%22130%22%20cy%3D%22170%22%20rx%3D%2213%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20130%20150%20Q%20127%20170%20130%20190%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2835%20380%20160%29%22%3E%3Cellipse%20cx%3D%22380%22%20cy%3D%22160%22%20rx%3D%2214%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20380%20142%20Q%20377%20160%20380%20178%22%20fill%3D%22none%22%20stroke%3D%22%23A0622D%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-      background-size: 400px 400px;
+    /* Pinned to the OUTER edge of each panel — stays clear of the cartouche */
+    .hero-mark-corner {
+      position: absolute;
+      top: clamp(80px, 10vw, 140px);
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ember);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      white-space: nowrap;
+      z-index: 3;
     }
-    .services .section-header h2 { color: #FFF8F0; }
-    .services .section-header p { color: rgba(255,248,240,0.65); }
-    .services .section-tag { background: rgba(200,150,45,0.2); color: #C8962D; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-    .service-card {
-      background: white; border-radius: 16px; padding: 40px 30px;
-      border: 1px solid rgba(139, 69, 19, 0.1); transition: all 0.3s;
-      position: relative; overflow: hidden;
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(139, 69, 19, 0.12);
-    }
-    .service-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 4px; background: linear-gradient(90deg, var(--brown), var(--orange));
-      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
-    }
-    .service-card:hover::before { transform: scaleX(1); }
-    .service-icon {
-      width: 60px; height: 60px; border-radius: 14px;
-      background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(232, 146, 13, 0.1));
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px; font-size: 28px;
-    }
-    .service-card h3 { font-size: 22px; color: var(--text-dark); margin-bottom: 12px; }
-    .service-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
-
-    /* ===== PRODUCTS / COFFEE ===== */
-    .products {
-      padding: 100px 0;
-      background-color: #FDF5ED;
-      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cg%3E%3Cpath%20d%3D%22M%2015%205%20Q%2025%2030%2035%2055%20Q%2042%2075%2050%2095%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%208%2022%205%2010%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%2042%2018%2050%208%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2018%2048%2010%2038%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2052%2044%2062%2035%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2028%2076%2018%2068%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2060%2070%2070%2060%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2240%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2262%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2285%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2230%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2272%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-30%20120%2045%29%22%3E%3Cellipse%20cx%3D%22120%22%20cy%3D%2245%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20120%2025%20Q%20117%2045%20120%2065%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2815%20280%2030%29%22%3E%3Cellipse%20cx%3D%22280%22%20cy%3D%2230%22%20rx%3D%2212%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20280%2012%20Q%20277%2030%20280%2048%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-45%20350%2080%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%2280%22%20rx%3D%2216%22%20ry%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%2056%20Q%20347%2080%20350%20104%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2825%2060%20130%29%22%3E%3Cellipse%20cx%3D%2260%22%20cy%3D%22130%22%20rx%3D%2213%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2060%20111%20Q%2057%20130%2060%20149%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-10%20200%20110%29%22%3E%3Cellipse%20cx%3D%22200%22%20cy%3D%22110%22%20rx%3D%2215%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20200%2088%20Q%20197%20110%20200%20132%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2840%20320%20150%29%22%3E%3Cellipse%20cx%3D%22320%22%20cy%3D%22150%22%20rx%3D%2214%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20320%20129%20Q%20317%20150%20320%20171%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-35%2090%20220%29%22%3E%3Cellipse%20cx%3D%2290%22%20cy%3D%22220%22%20rx%3D%2216%22%20ry%3D%2226%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2090%20194%20Q%2087%20220%2090%20246%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2855%20250%20200%29%22%3E%3Cellipse%20cx%3D%22250%22%20cy%3D%22200%22%20rx%3D%2212%22%20ry%3D%2217%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20250%20183%20Q%20247%20200%20250%20217%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-20%20370%20220%29%22%3E%3Cellipse%20cx%3D%22370%22%20cy%3D%22220%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20370%20200%20Q%20367%20220%20370%20240%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2810%20150%20280%29%22%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%22280%22%20rx%3D%2218%22%20ry%3D%2225%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20150%20255%20Q%20147%20280%20150%20305%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-50%2040%20320%29%22%3E%3Cellipse%20cx%3D%2240%22%20cy%3D%22320%22%20rx%3D%2213%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2040%20302%20Q%2037%20320%2040%20338%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2830%20300%20300%29%22%3E%3Cellipse%20cx%3D%22300%22%20cy%3D%22300%22%20rx%3D%2215%22%20ry%3D%2223%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20300%20277%20Q%20297%20300%20300%20323%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-15%20180%20350%29%22%3E%3Cellipse%20cx%3D%22180%22%20cy%3D%22350%22%20rx%3D%2214%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20180%20331%20Q%20177%20350%20180%20369%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2845%20350%20350%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%22350%22%20rx%3D%2216%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%20328%20Q%20347%20350%20350%20372%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-40%20240%20370%29%22%3E%3Cellipse%20cx%3D%22240%22%20cy%3D%22370%22%20rx%3D%2212%22%20ry%3D%2216%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20240%20354%20Q%20237%20370%20240%20386%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2820%2080%20380%29%22%3E%3Cellipse%20cx%3D%2280%22%20cy%3D%22380%22%20rx%3D%2215%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2080%20359%20Q%2077%20380%2080%20401%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-25%20130%20170%29%22%3E%3Cellipse%20cx%3D%22130%22%20cy%3D%22170%22%20rx%3D%2213%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20130%20150%20Q%20127%20170%20130%20190%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2835%20380%20160%29%22%3E%3Cellipse%20cx%3D%22380%22%20cy%3D%22160%22%20rx%3D%2214%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20380%20142%20Q%20377%20160%20380%20178%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-      background-size: 400px 400px;
-    }
-    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-    .product-card {
-      background: white; border-radius: 20px; overflow: hidden;
-      border: 1px solid rgba(139, 69, 19, 0.1); transition: all 0.3s;
-    }
-    .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(139, 69, 19, 0.15); }
-    .product-image {
-      aspect-ratio: 4/3; position: relative; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .product-info { padding: 24px; }
-    .product-info h3 { font-size: 20px; color: var(--text-dark); margin-bottom: 8px; }
-    .product-info .origin { font-size: 13px; color: var(--orange); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-    .product-info p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
-    .product-info .tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
-    .product-info .tag {
-      background: rgba(139, 69, 19, 0.08); color: var(--brown);
-      padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;
+    .hero-left  .hero-mark-corner { left: clamp(18px, 2vw, 30px); }
+    .hero-right .hero-mark-corner { right: clamp(18px, 2vw, 30px); color: var(--ember-soft); }
+    .hero-mark-corner::after {
+      content: ""; display: block;
+      width: 1px; height: 56px;
+      background: currentColor;
+      margin: 14px auto 0;
+      opacity: 0.5;
     }
 
-    /* ===== PROCESS ===== */
-    .process { padding: 100px 0; background: linear-gradient(135deg, var(--bg-dark), #2C1810); }
-    .process .section-header h2 { color: var(--cream); }
-    .process .section-header p { color: rgba(255,248,240,0.6); }
-    .process .section-tag { background: rgba(232, 146, 13, 0.15); color: var(--orange); }
-    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 20px; }
-    .step-card {
-      text-align: center; padding: 30px 20px;
-      border: 1px solid rgba(139, 69, 19, 0.2); border-radius: 16px;
-      background: rgba(255,255,255,0.03); transition: all 0.3s;
+    .hero-body {
+      position: relative; z-index: 3;
+      margin-top: clamp(20px, 5vw, 50px);
     }
-    .step-card:hover { background: rgba(255,255,255,0.06); border-color: var(--orange); }
-    .step-number {
-      width: 50px; height: 50px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--brown), var(--orange));
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px; font-family: 'Russo One', sans-serif;
-      font-size: 22px; font-weight: 700; color: white;
+    .hero-heading {
+      font-family: var(--display);
+      font-variation-settings: "SOFT" 50, "WONK" 1;
+      font-weight: 400;
+      font-size: clamp(42px, 6.2vw, 92px);
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+      color: var(--bean);
+      margin: 0;
     }
-    .step-card h4 { font-size: 18px; color: var(--cream); margin-bottom: 8px; }
-    .step-card p { font-size: 14px; color: rgba(255,248,240,0.5); line-height: 1.6; }
+    .hero-heading em {
+      font-style: italic;
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+      color: var(--ember);
+    }
+    .hero-right .hero-heading { color: var(--cream); }
+    .hero-right .hero-heading em { color: var(--ember-bright); }
 
-    /* ===== CONTACT ===== */
-    .contact {
-      padding: 100px 0;
-      background-color: #FDF5ED;
-      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cg%3E%3Cpath%20d%3D%22M%2015%205%20Q%2025%2030%2035%2055%20Q%2042%2075%2050%2095%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%208%2022%205%2010%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%2042%2018%2050%208%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2018%2048%2010%2038%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2052%2044%2062%2035%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2028%2076%2018%2068%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2060%2070%2070%2060%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2240%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2262%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2285%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2230%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2272%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-30%20120%2045%29%22%3E%3Cellipse%20cx%3D%22120%22%20cy%3D%2245%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20120%2025%20Q%20117%2045%20120%2065%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2815%20280%2030%29%22%3E%3Cellipse%20cx%3D%22280%22%20cy%3D%2230%22%20rx%3D%2212%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20280%2012%20Q%20277%2030%20280%2048%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-45%20350%2080%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%2280%22%20rx%3D%2216%22%20ry%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%2056%20Q%20347%2080%20350%20104%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2825%2060%20130%29%22%3E%3Cellipse%20cx%3D%2260%22%20cy%3D%22130%22%20rx%3D%2213%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2060%20111%20Q%2057%20130%2060%20149%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-10%20200%20110%29%22%3E%3Cellipse%20cx%3D%22200%22%20cy%3D%22110%22%20rx%3D%2215%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20200%2088%20Q%20197%20110%20200%20132%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2840%20320%20150%29%22%3E%3Cellipse%20cx%3D%22320%22%20cy%3D%22150%22%20rx%3D%2214%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20320%20129%20Q%20317%20150%20320%20171%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-35%2090%20220%29%22%3E%3Cellipse%20cx%3D%2290%22%20cy%3D%22220%22%20rx%3D%2216%22%20ry%3D%2226%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2090%20194%20Q%2087%20220%2090%20246%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2855%20250%20200%29%22%3E%3Cellipse%20cx%3D%22250%22%20cy%3D%22200%22%20rx%3D%2212%22%20ry%3D%2217%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20250%20183%20Q%20247%20200%20250%20217%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-20%20370%20220%29%22%3E%3Cellipse%20cx%3D%22370%22%20cy%3D%22220%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20370%20200%20Q%20367%20220%20370%20240%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2810%20150%20280%29%22%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%22280%22%20rx%3D%2218%22%20ry%3D%2225%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20150%20255%20Q%20147%20280%20150%20305%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-50%2040%20320%29%22%3E%3Cellipse%20cx%3D%2240%22%20cy%3D%22320%22%20rx%3D%2213%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2040%20302%20Q%2037%20320%2040%20338%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2830%20300%20300%29%22%3E%3Cellipse%20cx%3D%22300%22%20cy%3D%22300%22%20rx%3D%2215%22%20ry%3D%2223%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20300%20277%20Q%20297%20300%20300%20323%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-15%20180%20350%29%22%3E%3Cellipse%20cx%3D%22180%22%20cy%3D%22350%22%20rx%3D%2214%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20180%20331%20Q%20177%20350%20180%20369%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2845%20350%20350%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%22350%22%20rx%3D%2216%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%20328%20Q%20347%20350%20350%20372%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-40%20240%20370%29%22%3E%3Cellipse%20cx%3D%22240%22%20cy%3D%22370%22%20rx%3D%2212%22%20ry%3D%2216%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20240%20354%20Q%20237%20370%20240%20386%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2820%2080%20380%29%22%3E%3Cellipse%20cx%3D%2280%22%20cy%3D%22380%22%20rx%3D%2215%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2080%20359%20Q%2077%20380%2080%20401%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-25%20130%20170%29%22%3E%3Cellipse%20cx%3D%22130%22%20cy%3D%22170%22%20rx%3D%2213%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20130%20150%20Q%20127%20170%20130%20190%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2835%20380%20160%29%22%3E%3Cellipse%20cx%3D%22380%22%20cy%3D%22160%22%20rx%3D%2214%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20380%20142%20Q%20377%20160%20380%20178%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-      background-size: 400px 400px;
+    .hero-sub {
+      margin-top: 28px;
+      max-width: 460px;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--ink-soft);
     }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-    .contact-info h3 { font-size: 28px; margin-bottom: 16px; }
-    .contact-info p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; }
-    .contact-details { list-style: none; }
-    .contact-details li {
-      display: flex; align-items: center; gap: 12px; padding: 14px 0;
-      border-bottom: 1px solid rgba(139, 69, 19, 0.1);
-      font-size: 15px; color: var(--text-muted);
-    }
-    .contact-details li .icon { font-size: 20px; }
-    .contact-details a { color: var(--brown); text-decoration: none; }
-    .contact-details a:hover { color: var(--orange); }
-    .contact-form {
-      background: white; border-radius: 20px; padding: 40px;
-      border: 1px solid rgba(139, 69, 19, 0.1);
-      box-shadow: 0 10px 40px rgba(139, 69, 19, 0.05);
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 6px; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 14px 16px; border: 1px solid rgba(139, 69, 19, 0.2);
-      border-radius: 10px; font-size: 15px; font-family: 'Inter', sans-serif;
-      transition: border-color 0.3s; background: var(--cream);
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px rgba(232, 146, 13, 0.1);
-    }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .hero-right .hero-sub { color: rgba(254, 245, 231, 0.82); }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--bg-dark); padding: 60px 0 30px;
-      border-top: 3px solid var(--brown);
+    .hero-bottom {
+      position: relative; z-index: 3;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 24px;
+      margin-top: clamp(30px, 6vw, 60px);
     }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand p { color: rgba(255,248,240,0.5); font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 300px; }
-    .footer-col h4 {
-      color: var(--cream); font-size: 14px; text-transform: uppercase;
-      letter-spacing: 1.5px; margin-bottom: 16px; font-family: 'Inter', sans-serif; font-weight: 600;
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 16px 26px 16px 28px;
+      background: var(--bean);
+      color: var(--cream);
+      font-family: var(--sans); font-size: 12px;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      border-radius: 999px;
+      transition: transform 0.3s var(--ease), background 0.3s var(--ease);
     }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul a { color: rgba(255,248,240,0.5); text-decoration: none; font-size: 14px; transition: color 0.3s; }
-    .footer-col ul a:hover { color: var(--orange); }
-    .footer-bottom {
-      border-top: 1px solid rgba(139, 69, 19, 0.2); padding-top: 24px;
+    .hero-cta:hover { background: var(--ember); color: var(--bean-deep); transform: translateY(-2px); }
+    .hero-cta .arrow {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--ember); color: var(--bean-deep);
+      display: grid; place-items: center;
+      font-size: 13px; font-weight: 700;
+      transition: background 0.3s var(--ease);
+    }
+    .hero-cta:hover .arrow { background: var(--bean-deep); color: var(--ember); }
+
+    .hero-right .hero-cta { background: var(--ember); color: var(--bean-deep); }
+    .hero-right .hero-cta .arrow { background: var(--bean-deep); color: var(--ember); }
+    .hero-right .hero-cta:hover { background: var(--cream); color: var(--bean); }
+    .hero-right .hero-cta:hover .arrow { background: var(--bean); color: var(--cream); }
+
+    .hero-weight {
+      font-family: var(--display);
+      font-weight: 300;
+      font-size: clamp(40px, 6vw, 82px);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .hero-weight .g {
+      color: var(--ember);
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+      font-style: italic;
+    }
+    .hero-right .hero-weight { color: var(--cream); }
+
+    .hero-tagline-amh {
+      font-family: var(--amharic);
+      font-size: 15px;
+      color: var(--ember-soft);
+      margin-top: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Central cartouche that bridges both panels */
+    .cartouche {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      width: clamp(260px, 28vw, 360px);
+      aspect-ratio: 3 / 4;
+      display: grid; place-items: center;
+      filter: drop-shadow(0 22px 40px rgba(63, 28, 5, 0.35));
+    }
+    .cartouche svg { width: 100%; height: 100%; position: absolute; inset: 0; }
+    .cartouche-inner {
+      position: relative; z-index: 2;
+      text-align: center;
+      padding: 30px 28px;
+    }
+    .cartouche-mark {
+      width: 52px; height: 52px; border-radius: 50%;
+      margin: 0 auto 12px;
+      background: var(--bean);
+      display: grid; place-items: center;
+      overflow: hidden;
+    }
+    .cartouche-mark img { width: 60%; height: 60%; object-fit: contain; filter: brightness(1.15); }
+    .cartouche-name {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: clamp(32px, 3.6vw, 48px);
+      letter-spacing: 0.22em;
+      color: var(--bean);
+      line-height: 1;
+      margin: 0;
+    }
+    .cartouche-tag {
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+    .cartouche-divider {
+      width: 60px; height: 1px; background: var(--ember);
+      margin: 16px auto 14px;
+      opacity: 0.65;
+    }
+    .cartouche-meta {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    /* Hero decorative branch — smaller and tucked into the outer corners so it
+       never clashes with the eyebrow/heading. */
+    .hero-branch {
+      position: absolute;
+      width: 200px; height: 200px;
+      opacity: 0.9;
+      z-index: 1;
+    }
+    .hero-branch.tl { top: 16px; left: -36px; }
+    .hero-branch.br { bottom: 16px; right: -36px; transform: scaleX(-1) rotate(180deg); }
+
+    /* ---------- MARQUEE ---------- */
+    .marquee {
+      background: var(--bean-deep);
+      color: var(--ember-soft);
+      border-top: 1px solid var(--line-cream);
+      border-bottom: 1px solid var(--line-cream);
+      overflow: hidden;
+      padding: 18px 0;
+      position: relative;
+    }
+    .marquee-track {
+      display: flex; gap: 56px; white-space: nowrap;
+      font-family: var(--display);
+      font-weight: 400;
+      font-variation-settings: "SOFT" 80, "WONK" 1;
+      font-size: 22px;
+      letter-spacing: 0.04em;
+      animation: slide 42s linear infinite;
+    }
+    .marquee-track span { display: inline-flex; align-items: center; gap: 28px; }
+    .marquee-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ember); display: inline-block; }
+    .marquee em { font-style: italic; color: var(--ember-bright); }
+    @keyframes slide { to { transform: translateX(-50%); } }
+
+    /* ---------- HERITAGE ---------- */
+    .heritage {
+      position: relative;
+      background: var(--cream);
+      padding: clamp(80px, 10vw, 160px) 0;
+      overflow: hidden;
+    }
+    .heritage-grid {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(40px, 7vw, 100px);
+      align-items: start;
+    }
+    .heritage-visual {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      background: var(--bean);
+      border-radius: 260px 260px 8px 8px;
+      overflow: hidden;
+      display: grid; place-items: center;
+    }
+    .heritage-visual::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 20%, rgba(232, 146, 13, 0.35), transparent 60%);
+    }
+    .heritage-visual img {
+      width: 78%; position: relative; z-index: 2;
+      filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.4));
+    }
+    .heritage-visual-tag {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      z-index: 3;
+      font-family: var(--display);
+      font-style: italic;
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+      font-size: 14px;
+      color: var(--ember-soft);
+      letter-spacing: 0.12em;
+    }
+
+    .heritage-text h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-variation-settings: "SOFT" 50, "WONK" 1;
+      font-size: clamp(36px, 4.5vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      color: var(--bean);
+      margin: 20px 0 28px;
+      max-width: 580px;
+    }
+    .heritage-text h2 em {
+      font-style: italic; color: var(--ember);
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+    }
+    .heritage-lead {
+      font-size: 18px; line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 560px;
+      margin-bottom: 24px;
+    }
+    .heritage-lead strong { color: var(--bean); font-weight: 600; }
+
+    .heritage-amh {
+      font-family: var(--amharic);
+      font-size: 16px; line-height: 1.9;
+      color: var(--ink-soft);
+      background: var(--cream-warm);
+      border-left: 3px solid var(--ember);
+      padding: 22px 26px;
+      margin: 32px 0;
+      max-width: 560px;
+      border-radius: 2px;
+    }
+
+    .heritage-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      margin-top: 40px;
+      max-width: 580px;
+    }
+    .heritage-stats > div {
+      background: var(--cream);
+      padding: 24px 20px;
+    }
+    .heritage-stats .num {
+      font-family: var(--display);
+      font-weight: 400;
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+      font-size: 42px;
+      color: var(--ember);
+      line-height: 1;
+    }
+    .heritage-stats .num em { font-style: italic; }
+    .heritage-stats .lbl {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 10px;
+    }
+
+    /* ---------- RANGE (packages) ---------- */
+    .range {
+      position: relative;
+      background: var(--bean);
+      color: var(--cream);
+      padding: clamp(80px, 10vw, 160px) 0;
+      overflow: hidden;
+    }
+    .range-intro {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: clamp(50px, 7vw, 100px);
+      position: relative; z-index: 2;
+    }
+    .range-intro h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-variation-settings: "SOFT" 50, "WONK" 1;
+      font-size: clamp(42px, 5.4vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+      margin: 16px 0 0;
+      color: var(--cream);
+    }
+    .range-intro h2 em {
+      font-style: italic; color: var(--ember-bright);
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+    }
+    .range-intro p {
+      font-size: 16px; line-height: 1.7;
+      color: rgba(254, 245, 231, 0.76);
+      max-width: 520px;
+    }
+
+    .range-grid {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 2vw, 32px);
+    }
+    .pack {
+      position: relative;
+      background: var(--bean-deep);
+      border: 1px solid rgba(232, 146, 13, 0.2);
+      border-radius: 4px;
+      padding: 28px;
+      transition: transform 0.5s var(--ease), border-color 0.5s var(--ease);
+      display: flex; flex-direction: column;
+    }
+    .pack:hover { transform: translateY(-6px); border-color: var(--ember); }
+    .pack-media {
+      aspect-ratio: 3 / 4;
+      background: var(--cream-warm);
+      border-radius: 2px;
+      overflow: hidden;
+      display: grid; place-items: center;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .pack-media::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(232, 146, 13, 0.22), transparent 70%);
+    }
+    .pack-media img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s var(--ease);
+    }
+    .pack:hover .pack-media img { transform: scale(1.04); }
+
+    .pack-weight {
+      font-family: var(--display);
+      font-weight: 300;
+      font-size: 52px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--cream);
+    }
+    .pack-weight em {
+      font-style: italic; color: var(--ember-bright);
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+    }
+    .pack-name {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ember-soft);
+      margin-top: 14px;
+    }
+    .pack-desc {
+      font-size: 14.5px; line-height: 1.65;
+      color: rgba(254, 245, 231, 0.72);
+      margin: 14px 0 20px;
+      flex: 1;
+    }
+    .pack-foot {
       display: flex; justify-content: space-between; align-items: center;
+      padding-top: 18px;
+      border-top: 1px solid rgba(232, 146, 13, 0.22);
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
-    .footer-bottom p { color: rgba(255,248,240,0.4); font-size: 13px; }
-    .footer-bottom a { color: rgba(255,248,240,0.4); text-decoration: none; }
-    .footer-bottom a:hover { color: var(--orange); }
+    .pack-foot .amh {
+      font-family: var(--amharic);
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--ember-soft);
+      font-size: 13px;
+    }
 
-    /* ===== ANIMATIONS ===== */
-    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* ---------- PROCESS ---------- */
+    .process {
+      position: relative;
+      background: var(--cream);
+      padding: clamp(80px, 10vw, 160px) 0;
+      overflow: hidden;
+    }
+    .process-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: end;
+      margin-bottom: clamp(50px, 7vw, 90px);
+      position: relative; z-index: 2;
+    }
+    .process-head h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-variation-settings: "SOFT" 50, "WONK" 1;
+      font-size: clamp(42px, 5.6vw, 84px);
+      line-height: 0.96;
+      letter-spacing: -0.025em;
+      margin: 18px 0 0;
+      color: var(--bean);
+    }
+    .process-head h2 em {
+      font-style: italic; color: var(--ember);
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+    }
+    .process-head p {
+      font-size: 16.5px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 480px;
+    }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
-      .hero-content { grid-template-columns: 1fr; text-align: center; padding: 100px 0 60px; }
-      .hero-text h1 { font-size: 36px; }
-      .hero-text p { margin: 0 auto 30px; }
-      .hero-buttons { justify-content: center; }
-      .hero-visual { display: none; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .stat-item .number { font-size: 32px; }
-      .about-grid { grid-template-columns: 1fr; }
-      .services-grid, .products-grid { grid-template-columns: 1fr; }
-      #packaging > .container > div[style*="grid"] { grid-template-columns: 1fr !important; }
-      .process-steps { grid-template-columns: repeat(2, 1fr); }
-      .contact-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .step {
+      padding: 36px 28px 40px;
+      border-right: 1px solid var(--line);
+      position: relative;
+      background: var(--cream);
+      transition: background 0.4s var(--ease);
+    }
+    .step:last-child { border-right: 0; }
+    .step:hover { background: var(--cream-warm); }
+    .step-num {
+      font-family: var(--display);
+      font-weight: 300;
+      font-size: 22px;
+      color: var(--ember);
+      letter-spacing: 0.05em;
+      margin-bottom: 32px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .step-num::after {
+      content: ""; flex: 1; height: 1px; background: var(--line);
+    }
+    .step-title {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.15;
+      color: var(--bean);
+      margin: 0 0 12px;
+    }
+    .step-desc {
+      font-size: 14px; line-height: 1.65;
+      color: var(--ink-soft);
+    }
+    .step-amh {
+      font-family: var(--amharic);
+      font-size: 13px;
+      color: var(--ember);
+      margin-top: 14px;
+      font-weight: 400;
+    }
+
+    /* ---------- PULL QUOTE ---------- */
+    .pull {
+      position: relative;
+      background: var(--bean-deep);
+      color: var(--cream);
+      padding: clamp(80px, 11vw, 180px) 0;
+      overflow: hidden;
+    }
+    .pull-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative; z-index: 2;
+    }
+    .pull-quote {
+      font-family: var(--display);
+      font-weight: 400;
+      font-variation-settings: "SOFT" 60, "WONK" 1;
+      font-size: clamp(30px, 3.6vw, 54px);
+      line-height: 1.12;
+      letter-spacing: -0.018em;
+      color: var(--cream);
+    }
+    .pull-quote em {
+      font-style: italic; color: var(--ember-bright);
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+    }
+    .pull-quote::before {
+      content: "“"; display: block;
+      font-size: 120px; line-height: 0.6;
+      color: var(--ember);
+      margin-bottom: 6px;
+    }
+    .pull-amh {
+      font-family: var(--amharic);
+      font-size: clamp(20px, 2.2vw, 32px);
+      line-height: 1.5;
+      color: var(--ember-soft);
+      border-left: 2px solid var(--ember);
+      padding-left: 30px;
+    }
+    .pull-attr {
+      margin-top: 30px;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(247, 197, 121, 0.8);
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      position: relative;
+      background: var(--cream);
+      padding: clamp(80px, 10vw, 160px) 0;
+      overflow: hidden;
+    }
+    .contact-frame {
+      position: relative; z-index: 2;
+      background: var(--cream-warm);
+      border-radius: 8px;
+      padding: clamp(40px, 6vw, 80px);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px; align-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(232, 146, 13, 0.3);
+    }
+    .contact-frame::before {
+      content: ""; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'><g fill='none' stroke='%23E8920D' stroke-width='1.2' stroke-linecap='round' opacity='0.15'><g transform='translate(60 70) rotate(25)'><ellipse cx='0' cy='0' rx='22' ry='13'/><path d='M -22 0 Q 0 -4 22 0'/></g><g transform='translate(360 90) rotate(45)'><ellipse cx='0' cy='0' rx='24' ry='13'/><path d='M -24 0 Q 0 -4 24 0'/></g><g transform='translate(470 180) rotate(-30)'><ellipse cx='0' cy='0' rx='21' ry='12'/><path d='M -21 0 Q 0 -3 21 0'/></g><g transform='translate(110 380) rotate(-55)'><ellipse cx='0' cy='0' rx='23' ry='12'/><path d='M -23 0 Q 0 -3 23 0'/></g><g transform='translate(420 440) rotate(15)'><ellipse cx='0' cy='0' rx='22' ry='12'/><path d='M -22 0 Q 0 -3 22 0'/></g></g></svg>");
+      background-size: 520px 520px;
+      pointer-events: none;
+    }
+    .contact-frame > * { position: relative; z-index: 2; }
+
+    .contact-head h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-variation-settings: "SOFT" 50, "WONK" 1;
+      font-size: clamp(36px, 4.2vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.025em;
+      color: var(--bean);
+      margin: 20px 0;
+    }
+    .contact-head h2 em {
+      font-style: italic; color: var(--ember);
+      font-variation-settings: "SOFT" 100, "WONK" 1;
+    }
+    .contact-head p {
+      font-size: 16px; line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 460px;
+    }
+    .contact-lines {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .contact-line {
+      display: flex; align-items: center; gap: 18px;
+      padding: 22px 24px;
+      background: var(--cream);
+      border-radius: 6px;
+      transition: transform 0.3s var(--ease);
+    }
+    .contact-line:hover { transform: translateX(4px); }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--bean); color: var(--ember);
+      display: grid; place-items: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+    .contact-lbl {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 4px;
+    }
+    .contact-val {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 20px;
+      color: var(--bean);
+      letter-spacing: 0.02em;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: var(--bean-deep);
+      color: var(--ember-soft);
+      padding: 48px 0 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .foot-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--line-cream);
+      position: relative; z-index: 2;
+    }
+    .foot-brand {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .foot-brand .mark { width: 52px; height: 52px; border-radius: 50%; background: var(--cream); display: grid; place-items: center; overflow: hidden; }
+    .foot-brand .mark img { width: 64%; height: 64%; object-fit: contain; }
+    .foot-brand .name {
+      font-family: var(--display); font-weight: 500;
+      font-size: 24px; letter-spacing: 0.15em;
+      color: var(--cream);
+    }
+    .foot-brand .tag {
+      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--ember); margin-top: 4px;
+    }
+    .foot-note {
+      margin-top: 22px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: rgba(247, 197, 121, 0.65);
+      max-width: 380px;
+    }
+    .foot-col h4 {
+      font-family: var(--sans); font-size: 11px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--ember); margin: 0 0 18px;
+      font-weight: 500;
+    }
+    .foot-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .foot-col a {
+      font-size: 14px; color: rgba(254, 245, 231, 0.78);
+      transition: color 0.2s var(--ease);
+    }
+    .foot-col a:hover { color: var(--ember-bright); }
+
+    .foot-bottom {
+      margin-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 24px;
+      font-size: 12px;
+      color: rgba(247, 197, 121, 0.55);
+      font-family: var(--sans);
+      letter-spacing: 0.1em;
+      position: relative; z-index: 2;
+    }
+    .foot-bottom .amh {
+      font-family: var(--amharic);
+      color: var(--ember-soft);
+      letter-spacing: 0;
+      font-size: 13px;
+    }
+
+    /* ---------- REVEAL ANIMATIONS ---------- */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.1s; }
+    .reveal.d2 { transition-delay: 0.2s; }
+    .reveal.d3 { transition-delay: 0.3s; }
+    .reveal.d4 { transition-delay: 0.4s; }
+
+    @keyframes cartouche-in {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.92); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+    .cartouche { animation: cartouche-in 1.2s 0.3s var(--ease) backwards; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 960px) {
       .nav-links { display: none; }
       .nav-cta { display: none; }
       .hamburger { display: flex; }
-      .form-row { grid-template-columns: 1fr; }
-      .section-header h2 { font-size: 32px; }
+      .hero-split { grid-template-columns: 1fr; min-height: auto; }
+      .hero-panel { padding: 80px 24px; min-height: 520px; }
+      .cartouche { position: relative; top: auto; left: auto; transform: none; margin: -180px auto -120px; width: min(80vw, 320px); }
+      .cartouche { animation: cartouche-in 1.2s 0.3s var(--ease) backwards; }
+      @keyframes cartouche-in {
+        0% { opacity: 0; transform: scale(0.92); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+      .heritage-grid, .range-intro, .process-head, .pull-grid, .contact-frame, .foot-top { grid-template-columns: 1fr; gap: 40px; }
+      .range-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .step { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .step:nth-child(2n) { border-right: 0; }
+      .step:nth-last-child(-n+2) { border-bottom: 0; }
+      .hero-branch.tl { width: 160px; height: 160px; top: 10px; left: 10px; }
+      .hero-branch.br { width: 160px; height: 160px; bottom: 10px; right: 10px; }
+      .foot-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 560px) {
+      .process-steps { grid-template-columns: 1fr; }
+      .step { border-right: 0 !important; }
+      .step:nth-child(n) { border-right: 0; border-bottom: 1px solid var(--line); }
+      .step:last-child { border-bottom: 0; }
+      .heritage-stats { grid-template-columns: 1fr 1fr; }
+      .heritage-stats > div:last-child { grid-column: span 2; }
     }
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav>
+
+  <!-- NAV -->
+  <nav id="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <img src="logo.jpg" alt="Bunni General Business PLC" style="height: 48px; width: auto; border-radius: 4px; filter: brightness(1.1);">
-        <div style="display: flex; flex-direction: column;">
-          <span>BUNNI</span>
-          <span style="font-size: 9px; color: var(--orange); letter-spacing: 1px; font-family: 'Inter', sans-serif; font-weight: 500; margin-top: -2px;">GENERAL BUSINESS PLC</span>
-        </div>
+      <a href="#" class="brand" aria-label="Bunni home">
+        <span class="brand-mark"><img src="logo.jpg" alt="" /></span>
+        <span>
+          <span class="brand-name">BUNNI</span>
+          <span class="brand-sub">General Business PLC</span>
+        </span>
       </a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#coffee">Origins</a></li>
+        <li><a href="#heritage">Heritage</a></li>
+        <li><a href="#range">The Range</a></li>
         <li><a href="#process">Process</a></li>
+        <li><a href="#quote">Ethos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Get In Touch</a>
-      <div class="hamburger" onclick="this.classList.toggle('active')">
+      <a href="#contact" class="nav-cta"><span class="dot"></span>Request a sample</a>
+      <button class="hamburger" aria-label="Menu" onclick="this.classList.toggle('active')">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO — mirrors the two packages -->
   <section class="hero">
-    <div class="hero-pattern"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Premium Ethiopian Coffee,<br><span class="highlight">From Origin to World</span></h1>
-          <p>Bunni General Business PLC is a leading Ethiopian coffee exporter and distributor, connecting the birthplace of coffee with markets worldwide. We source, process, and deliver the finest beans from Ethiopia's legendary growing regions.</p>
-          <div class="hero-buttons">
-            <a href="#contact" class="btn-primary">☕ Request a Sample</a>
-            <a href="#coffee" class="btn-outline">Explore Our Coffees</a>
+    <div class="hero-split">
+
+      <!-- LEFT PANEL: cream like 250g -->
+      <div class="hero-panel hero-left">
+        <div class="beans-bg"></div>
+
+        <!-- Branch illustration top-left -->
+        <svg class="hero-branch tl branch-svg filled" viewBox="0 0 200 200">
+          <path d="M 30 170 C 40 120, 60 80, 110 50" />
+          <path d="M 50 130 C 70 120, 90 122, 110 130" />
+          <path d="M 65 100 C 85 92, 100 92, 118 100" />
+          <path d="M 85 72 C 100 65, 115 65, 130 72" />
+          <ellipse class="leaf" cx="60" cy="128" rx="14" ry="6" transform="rotate(-30 60 128)" />
+          <ellipse class="leaf" cx="82" cy="100" rx="13" ry="5.5" transform="rotate(-20 82 100)" />
+          <ellipse class="leaf" cx="104" cy="78" rx="12" ry="5" transform="rotate(-10 104 78)" />
+          <ellipse class="leaf" cx="128" cy="60" rx="11" ry="5" transform="rotate(0 128 60)" />
+          <circle class="cherry" cx="115" cy="125" r="5" />
+          <circle class="cherry" cx="92" cy="95" r="4.5" />
+          <circle class="cherry" cx="125" cy="78" r="4" />
+        </svg>
+
+        <div class="hero-top">
+          <div class="hero-amh">
+            ቡና የቀለማችን እና የማንነታችን መገለጫ ነው። በኢትዮጵያ፣ ቡና ሰላም ብቻ አይደለም — ማንነታችን ነው።
+          </div>
+          <div class="hero-mark-corner">EST · ADDIS ABABA</div>
+        </div>
+
+        <div class="hero-body reveal">
+          <span class="eyebrow">Born Green · Roasted Bunni</span>
+          <h1 class="hero-heading">
+            An expression<br/>
+            of our <em>color</em><br/>
+            &amp; identity.
+          </h1>
+          <p class="hero-sub">
+            The Amharic word for the rich, deep brown that paints our roasted beans, our fertile soil, and the very skin of our people — Bunni is a celebration of a heritage that is, quite literally, coffee.
+          </p>
+        </div>
+
+        <div class="hero-bottom">
+          <a href="#range" class="hero-cta">Meet the range <span class="arrow">↗</span></a>
+          <div>
+            <div class="hero-weight">25<em>0</em>g · 5<em>0</em>0g · 1<em>kg</em></div>
+            <div class="hero-tagline-amh">ከእረንጓዴ ገበታ — እስከ ቤትዎ ድረስ</div>
           </div>
         </div>
-        <div class="hero-visual">
-          <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-            <!-- Coffee bean cluster illustration -->
-            <defs>
-              <linearGradient id="bean1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#A0522D"/>
-                <stop offset="100%" stop-color="#5C2D0E"/>
-              </linearGradient>
-              <linearGradient id="bean2" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#8B4513"/>
-                <stop offset="100%" stop-color="#4A2508"/>
-              </linearGradient>
-              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#E8920D" stop-opacity="0.15"/>
-                <stop offset="100%" stop-color="#E8920D" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <circle cx="250" cy="250" r="200" fill="url(#glow)"/>
-            <!-- Large bean 1 -->
-            <g transform="translate(200, 150) rotate(-20)">
-              <ellipse cx="50" cy="70" rx="45" ry="65" fill="url(#bean1)"/>
-              <path d="M50 10 Q45 40 50 70 Q55 100 50 130" stroke="#3D1F0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <ellipse cx="40" cy="50" rx="10" ry="18" fill="#A0522D" opacity="0.3"/>
-            </g>
-            <!-- Large bean 2 -->
-            <g transform="translate(280, 180) rotate(15)">
-              <ellipse cx="50" cy="70" rx="45" ry="65" fill="url(#bean2)"/>
-              <path d="M50 10 Q45 40 50 70 Q55 100 50 130" stroke="#2C1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <ellipse cx="38" cy="50" rx="10" ry="18" fill="#8B4513" opacity="0.3"/>
-            </g>
-            <!-- Medium bean 3 -->
-            <g transform="translate(160, 270) rotate(-40)">
-              <ellipse cx="35" cy="50" rx="32" ry="48" fill="url(#bean1)"/>
-              <path d="M35 6 Q31 28 35 50 Q39 72 35 94" stroke="#3D1F0E" stroke-width="2" fill="none" stroke-linecap="round"/>
-            </g>
-            <!-- Medium bean 4 -->
-            <g transform="translate(300, 290) rotate(35)">
-              <ellipse cx="35" cy="50" rx="32" ry="48" fill="url(#bean2)"/>
-              <path d="M35 6 Q31 28 35 50 Q39 72 35 94" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
-            </g>
-            <!-- Small bean 5 -->
-            <g transform="translate(230, 320) rotate(5)">
-              <ellipse cx="25" cy="35" rx="22" ry="33" fill="url(#bean1)"/>
-              <path d="M25 5 Q22 20 25 35 Q28 50 25 65" stroke="#3D1F0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            </g>
-            <!-- Steam lines -->
-            <path d="M220 120 Q210 90 225 60 Q240 30 230 0" stroke="#E8920D" stroke-width="2" fill="none" opacity="0.3" stroke-linecap="round"/>
-            <path d="M260 110 Q250 75 265 45 Q280 15 270 -15" stroke="#E8920D" stroke-width="2" fill="none" opacity="0.2" stroke-linecap="round"/>
-            <path d="M300 130 Q290 100 305 70 Q320 40 310 10" stroke="#E8920D" stroke-width="1.5" fill="none" opacity="0.15" stroke-linecap="round"/>
-            <!-- Decorative dots -->
-            <circle cx="140" cy="180" r="4" fill="#E8920D" opacity="0.3"/>
-            <circle cx="380" cy="220" r="3" fill="#E8920D" opacity="0.2"/>
-            <circle cx="350" cy="380" r="5" fill="#E8920D" opacity="0.15"/>
-            <circle cx="160" cy="370" r="3" fill="#E8920D" opacity="0.25"/>
-          </svg>
-          <div class="hero-badge">
-            <div class="number">25+</div>
-            <div class="label">Years of Excellence</div>
+      </div>
+
+      <!-- RIGHT PANEL: deep brown like 1KG -->
+      <div class="hero-panel hero-right on-dark">
+        <div class="beans-bg on-dark"></div>
+
+        <svg class="hero-branch br branch-svg filled" viewBox="0 0 200 200">
+          <path d="M 30 170 C 40 120, 60 80, 110 50" />
+          <path d="M 50 130 C 70 120, 90 122, 110 130" />
+          <path d="M 65 100 C 85 92, 100 92, 118 100" />
+          <path d="M 85 72 C 100 65, 115 65, 130 72" />
+          <ellipse class="leaf" cx="60" cy="128" rx="14" ry="6" transform="rotate(-30 60 128)" />
+          <ellipse class="leaf" cx="82" cy="100" rx="13" ry="5.5" transform="rotate(-20 82 100)" />
+          <ellipse class="leaf" cx="104" cy="78" rx="12" ry="5" transform="rotate(-10 104 78)" />
+          <ellipse class="leaf" cx="128" cy="60" rx="11" ry="5" transform="rotate(0 128 60)" />
+          <circle class="cherry" cx="115" cy="125" r="5" />
+          <circle class="cherry" cx="92" cy="95" r="4.5" />
+          <circle class="cherry" cx="125" cy="78" r="4" />
+        </svg>
+
+        <div class="hero-top">
+          <div class="hero-mark-corner">SINGLE ORIGIN · ETHIOPIA</div>
+          <div class="hero-amh">"በእረንጓዴ በቀለ፣ በቡኒ ተቀላ።"</div>
+        </div>
+
+        <div class="hero-body reveal d1">
+          <span class="eyebrow">From the birthplace of coffee</span>
+          <h1 class="hero-heading">
+            Born <em>green.</em><br/>
+            Roasted<br/>
+            <em>Bunni.</em>
+          </h1>
+          <p class="hero-sub">
+            From the legendary forests where coffee began, we bring you a brew as resilient and beautiful as the culture that raised it. This isn't just a cup; it's a celebration of a heritage.
+          </p>
+        </div>
+
+        <div class="hero-bottom">
+          <a href="#contact" class="hero-cta">Export inquiries <span class="arrow">↗</span></a>
+          <div>
+            <div class="hero-weight">1<em>KG</em></div>
+            <div class="hero-tagline-amh">ባላንስ · መዓዛ · ማንነት</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Central bridging cartouche -->
+      <div class="cartouche" aria-hidden="true">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="none">
+          <defs>
+            <filter id="grain" x="0" y="0" width="100%" height="100%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/>
+              <feColorMatrix values="0 0 0 0 0.9, 0 0 0 0 0.55, 0 0 0 0 0.05, 0 0 0 0.08 0"/>
+              <feComposite in2="SourceGraphic" operator="in"/>
+            </filter>
+          </defs>
+          <!-- Ornate cartouche shape -->
+          <path d="
+            M 50 30
+            Q 150 10 250 30
+            Q 275 40 282 70
+            Q 290 120 285 200
+            Q 290 280 282 330
+            Q 275 360 250 370
+            Q 150 390 50 370
+            Q 25 360 18 330
+            Q 10 280 15 200
+            Q 10 120 18 70
+            Q 25 40 50 30 Z"
+            fill="#FEF5E7" stroke="#E8920D" stroke-width="3"/>
+          <path d="
+            M 58 40
+            Q 150 24 242 40
+            Q 262 48 268 74
+            Q 274 120 270 200
+            Q 274 280 268 326
+            Q 262 352 242 360
+            Q 150 376 58 360
+            Q 38 352 32 326
+            Q 26 280 30 200
+            Q 26 120 32 74
+            Q 38 48 58 40 Z"
+            fill="none" stroke="#E8920D" stroke-width="1" opacity="0.6"/>
+        </svg>
+        <div class="cartouche-inner">
+          <div class="cartouche-mark"><img src="logo.jpg" alt="Bunni mark" /></div>
+          <h2 class="cartouche-name">BUNNI</h2>
+          <div class="cartouche-tag">Reliability Personified</div>
+          <div class="cartouche-divider"></div>
+          <div class="cartouche-meta">Addis Ababa · Since 2013 E.C.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Yirgacheffe <span class="marquee-dot"></span> Sidamo <span class="marquee-dot"></span> Guji <span class="marquee-dot"></span> Limu <span class="marquee-dot"></span> Harar <span class="marquee-dot"></span> Djimma <span class="marquee-dot"></span> <em>Born Green. Roasted Bunni.</em> <span class="marquee-dot"></span> Yirgacheffe <span class="marquee-dot"></span> Sidamo <span class="marquee-dot"></span> Guji <span class="marquee-dot"></span> Limu <span class="marquee-dot"></span> Harar <span class="marquee-dot"></span> Djimma <span class="marquee-dot"></span> <em>Born Green. Roasted Bunni.</em> <span class="marquee-dot"></span></span>
+      <span>Yirgacheffe <span class="marquee-dot"></span> Sidamo <span class="marquee-dot"></span> Guji <span class="marquee-dot"></span> Limu <span class="marquee-dot"></span> Harar <span class="marquee-dot"></span> Djimma <span class="marquee-dot"></span> <em>Born Green. Roasted Bunni.</em> <span class="marquee-dot"></span> Yirgacheffe <span class="marquee-dot"></span> Sidamo <span class="marquee-dot"></span> Guji <span class="marquee-dot"></span> Limu <span class="marquee-dot"></span> Harar <span class="marquee-dot"></span> Djimma <span class="marquee-dot"></span> <em>Born Green. Roasted Bunni.</em> <span class="marquee-dot"></span></span>
+    </div>
+  </section>
+
+  <!-- HERITAGE -->
+  <section class="heritage" id="heritage">
+    <div class="beans-bg sparse"></div>
+    <div class="wrap">
+      <div class="heritage-grid">
+        <div class="heritage-visual reveal">
+          <img src="pkg-500g.jpg" alt="Bunni 500g package — deep brown with cream cartouche label" />
+          <div class="heritage-visual-tag">№ 500 · medium roast</div>
+        </div>
+        <div class="heritage-text">
+          <span class="eyebrow reveal">The story</span>
+          <h2 class="reveal d1">From the legendary <em>forests</em> where coffee began.</h2>
+          <p class="heritage-lead reveal d2">
+            Our name is the <strong>Amharic word for the rich deep brown</strong> that paints our roasted beans, our fertile soil, and the very skin of our people. Bunni General Business was built on the conviction that Ethiopian coffee should leave this soil with the same care it was grown with.
+          </p>
+          <div class="heritage-amh reveal d3">
+            "ቡና የቀለማችን እና የማንነታችን መገለጫ ነው። ከእረንጓዴ ተራሮች እስከ እርስዎ ጽዋ ድረስ — በታማኝነት በሁሉም ደረጃ እንቆማለን።"
+          </div>
+          <div class="heritage-stats reveal d4">
+            <div>
+              <div class="num">8<em>+</em></div>
+              <div class="lbl">Regional origins</div>
+            </div>
+            <div>
+              <div class="num">100<em>%</em></div>
+              <div class="lbl">Ethiopian soil</div>
+            </div>
+            <div>
+              <div class="num">3<em>0</em>+</div>
+              <div class="lbl">Markets served</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS BAR -->
-  <section class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item"><div class="number">25+</div><div class="label">Years Experience</div></div>
-        <div class="stat-item"><div class="number">30+</div><div class="label">Countries Served</div></div>
-        <div class="stat-item"><div class="number">5000+</div><div class="label">Tons Exported/Year</div></div>
-        <div class="stat-item"><div class="number">100%</div><div class="label">Ethiopian Origin</div></div>
+  <!-- RANGE -->
+  <section class="range" id="range">
+    <div class="beans-bg on-dark"></div>
+    <div class="wrap">
+      <div class="range-intro">
+        <div>
+          <span class="eyebrow">The range</span>
+          <h2>Three weights.<br/><em>One heritage.</em></h2>
+        </div>
+        <p class="reveal">
+          Each Bunni bag carries the same ornate cartouche, the same hand-drawn branch, the same promise. What changes is the weight of the cup you're pouring — from a quiet morning on your balcony to a café crate bound for the coast.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about bg-cream-beans">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">About Bunni</span>
-        <h2>The Birthplace of Coffee</h2>
-        <p>Ethiopia is where coffee was discovered, and Bunni carries forward this proud legacy to the world.</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-image">
-          <div style="text-align: center; padding: 20px;">
-            <img src="logo.jpg" alt="Bunni General Business PLC" style="max-width: 240px; width: 80%; height: auto; margin-bottom: 20px; filter: brightness(1.15) drop-shadow(0 4px 20px rgba(0,0,0,0.3));">
-            <div style="font-family: 'Inter', sans-serif; font-size: 14px; color: #FFF8F0; opacity: 0.8; font-style: italic; margin-top: 8px;">Born Green. Roasted Bunni.</div>
-            <div style="font-size: 12px; color: #E8920D; opacity: 0.7; margin-top: 6px; font-family: serif;">"ዐሬንጓዴ ዐቀይ ዐቡኒ ተቆላ"</div>
+      <div class="range-grid">
+        <article class="pack reveal d1">
+          <div class="pack-media"><img src="pkg-250g.jpg" alt="Bunni 250g pack" /></div>
+          <div class="pack-weight">25<em>0</em>g</div>
+          <div class="pack-name">The Daily</div>
+          <p class="pack-desc">A quarter-kilo of our medium roast, bagged for the home brewer who wants origin and ceremony without commitment.</p>
+          <div class="pack-foot">
+            <span>Retail</span>
+            <span class="amh">ለቤት ውስጥ</span>
           </div>
-        </div>
-        <div class="about-text">
-          <h3>Rooted in Ethiopian Heritage</h3>
-          <p>Bunni General Business PLC was founded with a mission to share Ethiopia's finest coffee with the world. Based in Addis Ababa, we work directly with farming communities across Ethiopia's most celebrated coffee-growing regions.</p>
-          <p>Our name "Bunni" comes from the Amharic word for coffee — a testament to our deep connection to Ethiopia's coffee heritage and culture.</p>
-          <ul class="about-features">
-            <li>
-              <span class="icon">🌍</span>
-              <span class="text"><strong>Global Export Network</strong> — Shipping premium beans to 30+ countries across Europe, Asia, North America, and the Middle East.</span>
-            </li>
-            <li>
-              <span class="icon">🤝</span>
-              <span class="text"><strong>Direct Trade Relationships</strong> — Working hand-in-hand with Ethiopian farmers, ensuring fair prices and sustainable practices.</span>
-            </li>
-            <li>
-              <span class="icon">✅</span>
-              <span class="text"><strong>Quality Certified</strong> — ECX certified, meeting international standards for specialty and commercial grade coffee.</span>
-            </li>
-            <li>
-              <span class="icon">🏭</span>
-              <span class="text"><strong>Full Processing Facilities</strong> — From cherry to green bean, we handle washing, drying, hulling, and grading in-house.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+        </article>
 
-  <!-- SERVICES -->
-  <section id="services" class="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">What We Do</span>
-        <h2>Our Services</h2>
-        <p>End-to-end coffee solutions from farm to your facility.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-icon">🚢</div>
-          <h3>Coffee Export</h3>
-          <p>We export premium Ethiopian green coffee beans to roasters, distributors, and importers worldwide. Bulk and specialty lots available year-round.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🏪</div>
-          <h3>Bulk Distribution in Ethiopia</h3>
-          <p>Large-scale domestic distribution of roasted and green coffee across Ethiopia. We supply supermarkets, hotels, restaurants, cafes, and wholesale buyers with bulk orders from 50kg bags to full container loads.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🔬</div>
-          <h3>Quality Control</h3>
-          <p>Rigorous cupping and grading at every stage. Our Q-graders ensure only the highest quality beans carry the Bunni name.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">📦</div>
-          <h3>Retail & Custom Packaging</h3>
-          <p>Available in 250g, 500g, and 1kg retail bags plus 50kg bulk sacks. Private label and custom branding available for distributors and retailers worldwide.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">🌱</div>
-          <h3>Sustainable Sourcing</h3>
-          <p>Direct partnerships with farming cooperatives, supporting sustainable agriculture, fair wages, and community development programs.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">📋</div>
-          <h3>Trade Consulting</h3>
-          <p>Expert guidance on Ethiopian coffee trade regulations, ECX procedures, logistics, and market intelligence for international buyers.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <article class="pack reveal d2">
+          <div class="pack-media"><img src="pkg-500g.jpg" alt="Bunni 500g pack" /></div>
+          <div class="pack-weight">5<em>0</em>0g</div>
+          <div class="pack-name">The Household</div>
+          <p class="pack-desc">The most loved weight on our line. A half-kilo built for the jebena, the espresso, and the slow weekend pour-over.</p>
+          <div class="pack-foot">
+            <span>Best seller</span>
+            <span class="amh">ለቤተሰብ</span>
+          </div>
+        </article>
 
-  <!-- PRODUCT LINES -->
-  <section id="products" class="services" style="background-color: #FDF5ED; background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Cg%3E%3Cpath%20d%3D%22M%2015%205%20Q%2025%2030%2035%2055%20Q%2042%2075%2050%2095%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%208%2022%205%2010%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2025%2028%20Q%2042%2018%2050%208%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2018%2048%2010%2038%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2035%2052%20Q%2052%2044%2062%2035%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2028%2076%2018%2068%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M%2044%2078%20Q%2060%2070%2070%2060%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2240%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2262%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2242%22%20cy%3D%2285%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2230%22%20r%3D%223%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2272%22%20r%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23DDB88A%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-30%20120%2045%29%22%3E%3Cellipse%20cx%3D%22120%22%20cy%3D%2245%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20120%2025%20Q%20117%2045%20120%2065%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2815%20280%2030%29%22%3E%3Cellipse%20cx%3D%22280%22%20cy%3D%2230%22%20rx%3D%2212%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20280%2012%20Q%20277%2030%20280%2048%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-45%20350%2080%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%2280%22%20rx%3D%2216%22%20ry%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%2056%20Q%20347%2080%20350%20104%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2825%2060%20130%29%22%3E%3Cellipse%20cx%3D%2260%22%20cy%3D%22130%22%20rx%3D%2213%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2060%20111%20Q%2057%20130%2060%20149%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-10%20200%20110%29%22%3E%3Cellipse%20cx%3D%22200%22%20cy%3D%22110%22%20rx%3D%2215%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20200%2088%20Q%20197%20110%20200%20132%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2840%20320%20150%29%22%3E%3Cellipse%20cx%3D%22320%22%20cy%3D%22150%22%20rx%3D%2214%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20320%20129%20Q%20317%20150%20320%20171%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-35%2090%20220%29%22%3E%3Cellipse%20cx%3D%2290%22%20cy%3D%22220%22%20rx%3D%2216%22%20ry%3D%2226%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2090%20194%20Q%2087%20220%2090%20246%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2855%20250%20200%29%22%3E%3Cellipse%20cx%3D%22250%22%20cy%3D%22200%22%20rx%3D%2212%22%20ry%3D%2217%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20250%20183%20Q%20247%20200%20250%20217%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-20%20370%20220%29%22%3E%3Cellipse%20cx%3D%22370%22%20cy%3D%22220%22%20rx%3D%2214%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20370%20200%20Q%20367%20220%20370%20240%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2810%20150%20280%29%22%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%22280%22%20rx%3D%2218%22%20ry%3D%2225%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20150%20255%20Q%20147%20280%20150%20305%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-50%2040%20320%29%22%3E%3Cellipse%20cx%3D%2240%22%20cy%3D%22320%22%20rx%3D%2213%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2040%20302%20Q%2037%20320%2040%20338%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2830%20300%20300%29%22%3E%3Cellipse%20cx%3D%22300%22%20cy%3D%22300%22%20rx%3D%2215%22%20ry%3D%2223%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20300%20277%20Q%20297%20300%20300%20323%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-15%20180%20350%29%22%3E%3Cellipse%20cx%3D%22180%22%20cy%3D%22350%22%20rx%3D%2214%22%20ry%3D%2219%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20180%20331%20Q%20177%20350%20180%20369%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2845%20350%20350%29%22%3E%3Cellipse%20cx%3D%22350%22%20cy%3D%22350%22%20rx%3D%2216%22%20ry%3D%2222%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20350%20328%20Q%20347%20350%20350%20372%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-40%20240%20370%29%22%3E%3Cellipse%20cx%3D%22240%22%20cy%3D%22370%22%20rx%3D%2212%22%20ry%3D%2216%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20240%20354%20Q%20237%20370%20240%20386%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2820%2080%20380%29%22%3E%3Cellipse%20cx%3D%2280%22%20cy%3D%22380%22%20rx%3D%2215%22%20ry%3D%2221%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%2080%20359%20Q%2077%20380%2080%20401%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%28-25%20130%20170%29%22%3E%3Cellipse%20cx%3D%22130%22%20cy%3D%22170%22%20rx%3D%2213%22%20ry%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20130%20150%20Q%20127%20170%20130%20190%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2835%20380%20160%29%22%3E%3Cellipse%20cx%3D%22380%22%20cy%3D%22160%22%20rx%3D%2214%22%20ry%3D%2218%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M%20380%20142%20Q%20377%20160%20380%20178%22%20fill%3D%22none%22%20stroke%3D%22%23E8C9A0%22%20stroke-width%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E'); background-size: 400px 400px;">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" style="background: rgba(139, 69, 19, 0.1); color: var(--brown);">What We Offer</span>
-        <h2 style="color: var(--text-dark);">Our Product Lines</h2>
-        <p style="color: var(--text-muted);">From farm-gate green beans to shelf-ready roasted packs — we serve local and global markets.</p>
-      </div>
-      <div class="services-grid">
-        <!-- Local Roasted -->
-        <div class="service-card reveal">
-          <div class="service-icon" style="background: rgba(232, 146, 13, 0.12);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8920D" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+        <article class="pack reveal d3">
+          <div class="pack-media"><img src="pkg-1kg.jpg" alt="Bunni 1KG pack" /></div>
+          <div class="pack-weight">1<em>kg</em></div>
+          <div class="pack-name">The Café</div>
+          <p class="pack-desc">A full kilo in the signature deep-brown cartouche — for cafés, hotels, and export buyers who move the bag by the crate.</p>
+          <div class="pack-foot">
+            <span>Horeca</span>
+            <span class="amh">ለካፌና ወደ ውጭ</span>
           </div>
-          <h3>Local Roasted / Processed Coffee</h3>
-          <p>Freshly roasted and ground coffee for Ethiopia's domestic market — supermarkets, hotels, restaurants, and cafés. Available in 250g, 500g, and 1kg retail packs.</p>
-        </div>
-        <!-- Local Green -->
-        <div class="service-card reveal">
-          <div class="service-icon" style="background: rgba(139, 69, 19, 0.12);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B4513" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          </div>
-          <h3>Local Green Coffee</h3>
-          <p>Washed and natural-process green coffee beans for local roasters and processors across Ethiopia. ECX-graded, traceable to origin.</p>
-        </div>
-        <!-- Export Roasted/Processed -->
-        <div class="service-card reveal">
-          <div class="service-icon" style="background: rgba(232, 146, 13, 0.12);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8920D" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          </div>
-          <h3>Export Roasted / Processed Coffee</h3>
-          <p>Premium roasted beans and ground coffee prepared to international standards for overseas buyers, specialty importers, and private-label partners.</p>
-        </div>
-        <!-- Export Roasted -->
-        <div class="service-card reveal">
-          <div class="service-icon" style="background: rgba(139, 69, 19, 0.12);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B4513" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 3 20 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <h3>Export Roasted Coffee</h3>
-          <p>Whole-bean roasted coffee for direct export — single-origin lots and custom blends, vacuum-sealed in GrainPro-lined packaging for maximum freshness.</p>
-        </div>
-        <!-- Export Green -->
-        <div class="service-card reveal">
-          <div class="service-icon" style="background: rgba(232, 146, 13, 0.12);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8920D" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0022 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
-          </div>
-          <h3>Export Green Coffee</h3>
-          <p>Grade 1 and Grade 2 green beans in 50kg and 60kg jute bags for international roasters and commodity traders. FOB Djibouti or CIF to destination.</p>
-        </div>
-        <!-- Local Ceramic -->
-        <div class="service-card reveal">
-          <div class="service-icon" style="background: rgba(139, 69, 19, 0.12);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B4513" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>Local Ceramic Wholesale & Distribution</h3>
-          <p>Traditional Ethiopian ceramic coffee sets — jebenas, sini cups, and rekebot trays — wholesale supply for retailers, hotels, gift shops, and cultural outlets across Ethiopia.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COFFEE ORIGINS -->
-  <section id="coffee" class="products">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Our Coffee</span>
-        <h2>Premium Ethiopian Origins</h2>
-        <p>From the highlands of Yirgacheffe to the forests of Kaffa — discover Ethiopia's finest.</p>
-      </div>
-      <div class="products-grid">
-        <div class="product-card reveal">
-          <div class="product-image" style="background: linear-gradient(135deg, #3D1F0E, #6B3A1F);">
-            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(70, 30) rotate(-10)">
-                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#A0522D" opacity="0.8"/>
-                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#3D1F0E" stroke-width="2" fill="none"/>
-              </g>
-              <g transform="translate(100, 40) rotate(10)">
-                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#8B4513" opacity="0.8"/>
-                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#2C1810" stroke-width="2" fill="none"/>
-              </g>
-              <text x="100" y="140" text-anchor="middle" font-family="Russo One,sans-serif" font-size="14" fill="#E8920D" font-weight="600">YIRGACHEFFE</text>
-            </svg>
-          </div>
-          <div class="product-info">
-            <div class="origin">Gedeo Zone, Southern Ethiopia</div>
-            <h3>Yirgacheffe</h3>
-            <p>Bright, floral, and citrusy. The jewel of Ethiopian coffee with delicate jasmine notes and a clean, tea-like body.</p>
-            <div class="tags"><span class="tag">Floral</span><span class="tag">Citrus</span><span class="tag">Grade 1</span></div>
-          </div>
-        </div>
-        <div class="product-card reveal">
-          <div class="product-image" style="background: linear-gradient(135deg, #4A2508, #7A3D14);">
-            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(70, 30) rotate(-15)">
-                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#A0522D" opacity="0.8"/>
-                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#3D1F0E" stroke-width="2" fill="none"/>
-              </g>
-              <g transform="translate(100, 35) rotate(20)">
-                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#6B3A1F" opacity="0.8"/>
-                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#2C1810" stroke-width="2" fill="none"/>
-              </g>
-              <text x="100" y="140" text-anchor="middle" font-family="Russo One,sans-serif" font-size="14" fill="#E8920D" font-weight="600">SIDAMO</text>
-            </svg>
-          </div>
-          <div class="product-info">
-            <div class="origin">Sidama Zone, Southern Ethiopia</div>
-            <h3>Sidamo</h3>
-            <p>Complex and full-bodied with rich berry undertones, wine-like acidity, and a sweet chocolate finish.</p>
-            <div class="tags"><span class="tag">Berry</span><span class="tag">Chocolate</span><span class="tag">Full Body</span></div>
-          </div>
-        </div>
-        <div class="product-card reveal">
-          <div class="product-image" style="background: linear-gradient(135deg, #2C1810, #5C2D0E);">
-            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(60, 25) rotate(-5)">
-                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#8B4513" opacity="0.8"/>
-                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#3D1F0E" stroke-width="2" fill="none"/>
-              </g>
-              <g transform="translate(95, 35) rotate(15)">
-                <ellipse cx="30" cy="45" rx="28" ry="42" fill="#A0522D" opacity="0.7"/>
-                <path d="M30 6 Q27 25 30 45 Q33 65 30 84" stroke="#3D1F0E" stroke-width="2" fill="none"/>
-              </g>
-              <text x="100" y="140" text-anchor="middle" font-family="Russo One,sans-serif" font-size="14" fill="#E8920D" font-weight="600">HARRAR</text>
-            </svg>
-          </div>
-          <div class="product-info">
-            <div class="origin">Harari Region, Eastern Ethiopia</div>
-            <h3>Harrar</h3>
-            <p>Bold and exotic with distinctive blueberry and dark fruit notes. Sun-dried for a wild, natural character that's uniquely Ethiopian.</p>
-            <div class="tags"><span class="tag">Blueberry</span><span class="tag">Wild</span><span class="tag">Sun-dried</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACKAGING -->
-  <section id="packaging" style="padding: 100px 0; background: linear-gradient(135deg, #6B3410 0%, #5C2D0E 40%, #4A2508 100%); position: relative; overflow: hidden;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, transparent, #C8962D, #E8920D, #C8962D, transparent);"></div>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" style="background: rgba(200, 150, 45, 0.2); color: #C8962D;">Packaging</span>
-        <h2 style="color: #FFF8F0;">Available Sizes</h2>
-        <p style="color: rgba(255,248,240,0.65);">From retail shelves to warehouse floors — we package for every need.</p>
-      </div>
-      <!-- Full packaging showcase -->
-      <div class="reveal" style="text-align: center;">
-        <img src="packaging.jpg" alt="Bunni Coffee Packaging - 250g, 500g, and 1KG bags" style="max-width: 100%; width: 900px; height: auto; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); filter: brightness(1.05);">
-        <div style="display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap;">
-          <div style="text-align: center;">
-            <h3 style="font-size: 20px; color: #FFF8F0; margin-bottom: 4px;">250g</h3>
-            <p style="font-size: 13px; color: rgba(255,248,240,0.6);">Retail Pouch</p>
-          </div>
-          <div style="text-align: center;">
-            <h3 style="font-size: 20px; color: #FFF8F0; margin-bottom: 4px;">500g</h3>
-            <p style="font-size: 13px; color: rgba(255,248,240,0.6);">Bestseller</p>
-          </div>
-          <div style="text-align: center;">
-            <h3 style="font-size: 20px; color: #FFF8F0; margin-bottom: 4px;">1KG</h3>
-            <p style="font-size: 13px; color: rgba(255,248,240,0.6);">Cafe Supply</p>
-          </div>
-          <div style="text-align: center;">
-            <h3 style="font-size: 20px; color: #FFF8F0; margin-bottom: 4px;">50KG</h3>
-            <p style="font-size: 13px; color: rgba(255,248,240,0.6);">Bulk Export</p>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- PROCESS -->
-  <section id="process" class="process">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">How We Work</span>
-        <h2>From Farm to Export</h2>
-        <p>Our meticulous process ensures every bean meets the highest standards.</p>
+  <section class="process" id="process">
+    <div class="beans-bg sparse"></div>
+    <div class="wrap">
+      <div class="process-head">
+        <div>
+          <span class="eyebrow">Born Green. Roasted Bunni.</span>
+          <h2>From <em>cherry</em><br/>to cartouche.</h2>
+        </div>
+        <p class="reveal">Four unhurried steps — the same four every bag goes through, whether it's bound for a jebena in Addis or a crate in Hamburg.</p>
       </div>
+
       <div class="process-steps">
-        <div class="step-card reveal">
-          <div class="step-number">1</div>
-          <h4>Sourcing</h4>
-          <p>Direct partnerships with farming communities across Yirgacheffe, Sidamo, Harrar, Guji, and Kaffa regions.</p>
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Sourced green, at altitude.</h3>
+          <p class="step-desc">We walk the cooperatives of Yirgacheffe, Sidamo, Guji and Limu ourselves. Cup before we commit.</p>
+          <div class="step-amh">ከተራራ ገበታ</div>
         </div>
-        <div class="step-card reveal">
-          <div class="step-number">2</div>
-          <h4>Processing</h4>
-          <p>Washed and natural processing at our own facilities. Careful drying, hulling, and sorting for consistency.</p>
+        <div class="step reveal d1">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Graded, then bagged.</h3>
+          <p class="step-desc">Screen size, density, moisture. Three passes minimum before a bean earns the Bunni stamp.</p>
+          <div class="step-amh">ጥራት መለኪያ</div>
         </div>
-        <div class="step-card reveal">
-          <div class="step-number">3</div>
-          <h4>Grading</h4>
-          <p>Professional cupping and ECX grading. Only beans that pass our strict quality checks move forward.</p>
+        <div class="step reveal d2">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Roasted to origin.</h3>
+          <p class="step-desc">Light enough to keep the jasmine of a Yirgacheffe. Deep enough to carry the body of a Harar.</p>
+          <div class="step-amh">ጥብስ በዓይነቱ</div>
         </div>
-        <div class="step-card reveal">
-          <div class="step-number">4</div>
-          <h4>Export</h4>
-          <p>Packaged in GrainPro bags, shipped via Djibouti port. Full documentation and tracking for every shipment.</p>
+        <div class="step reveal d3">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Sealed in the cartouche.</h3>
+          <p class="step-desc">Into the orange-and-cream bag, under the ornate label — with a harvest date you can actually read.</p>
+          <div class="step-amh">በታሸገ ቦርሳ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="pull" id="quote">
+    <div class="beans-bg on-dark"></div>
+    <div class="wrap">
+      <div class="pull-grid">
+        <blockquote class="pull-quote reveal">
+          We call it <em>Bunni</em> — the Amharic word for the rich, deep brown that paints our roasted beans, our fertile soil, and the very skin of our people.
+        </blockquote>
+        <div class="reveal d2">
+          <div class="pull-amh">"በእረንጓዴ በቀለ፣ በቡኒ ተቀላ።"<br/><span style="color: rgba(247, 197, 121, 0.6); font-size: 0.72em;">Born green. Roasted Bunni.</span></div>
+          <div class="pull-attr">— House motto, est. 2013 E.C.</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Get In Touch</span>
-        <h2>Let's Work Together</h2>
-        <p>Whether you're a roaster, distributor, or retailer — we'd love to hear from you.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Bunni General Business PLC</h3>
-          <p>Based in Addis Ababa, Ethiopia, we are your trusted partner for premium Ethiopian coffee. Reach out to discuss bulk orders, samples, or partnership opportunities.</p>
-          <ul class="contact-details">
-            <li><span class="icon">📍</span> Addis Ababa, Ethiopia</li>
-            <li><span class="icon">📧</span> <a href="mailto:info@bunnigeneralbusiness.com">info@bunnigeneralbusiness.com</a></li>
-            <li><span class="icon">📞</span> <a href="tel:+251911000000">+251 91 100 0000</a></li>
-            <li><span class="icon">🕐</span> Mon - Sat: 8:00 AM - 6:00 PM (EAT)</li>
-          </ul>
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-frame">
+        <div class="contact-head">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Samples for buyers. <em>Stories</em> for everyone else.</h2>
+          <p>Retail, wholesale, or export — we answer every note. Tell us the cup you're pouring and the port you're pouring it in.</p>
         </div>
-        <div class="contact-form">
-          <form action="https://formspree.io/f/xnjjnkrd" method="POST">
-            <div class="form-row">
-              <div class="form-group">
-                <label>Your Name *</label>
-                <input type="text" name="name" required placeholder="John Smith">
-              </div>
-              <div class="form-group">
-                <label>Email *</label>
-                <input type="email" name="email" required placeholder="john@company.com">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Company</label>
-                <input type="text" name="company" placeholder="Your Company">
-              </div>
-              <div class="form-group">
-                <label>Interest</label>
-                <select name="interest">
-                  <option value="">Select...</option>
-                  <option value="bulk-export">Bulk Export Order</option>
-                  <option value="sample">Request Samples</option>
-                  <option value="private-label">Private Label</option>
-                  <option value="distribution">Distribution Partnership</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Message *</label>
-              <textarea name="message" rows="5" required placeholder="Tell us about your coffee needs..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send Inquiry ☕</button>
-          </form>
+        <div class="contact-lines">
+          <a href="tel:+251114218024" class="contact-line">
+            <span class="contact-icon">✆</span>
+            <span>
+              <div class="contact-lbl">Call us</div>
+              <div class="contact-val">+251 11 42 18 24</div>
+            </span>
+          </a>
+          <a href="mailto:Bunni.plc@gmail.com" class="contact-line">
+            <span class="contact-icon">✉</span>
+            <span>
+              <div class="contact-lbl">Email us</div>
+              <div class="contact-val">Bunni.plc@gmail.com</div>
+            </span>
+          </a>
+          <div class="contact-line" style="cursor:default">
+            <span class="contact-icon">◈</span>
+            <span>
+              <div class="contact-lbl">Visit</div>
+              <div class="contact-val">Addis Ababa · Ethiopia</div>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -845,77 +1322,65 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="nav-logo" style="margin-bottom: 8px;">
-            <img src="logo.jpg" alt="Bunni General Business PLC" style="height: 48px; width: auto; border-radius: 4px; filter: brightness(1.1);">
-            <div style="display: flex; flex-direction: column;">
-              <span>BUNNI</span>
-              <span style="font-size: 9px; color: var(--orange); letter-spacing: 1px; font-family: 'Inter', sans-serif; font-weight: 500; margin-top: -2px;">GENERAL BUSINESS PLC</span>
-            </div>
-          </a>
-          <p>Premium Ethiopian coffee export and distribution. Connecting the birthplace of coffee with the world since establishment.</p>
+    <div class="beans-bg on-dark"></div>
+    <div class="wrap">
+      <div class="foot-top">
+        <div>
+          <div class="foot-brand">
+            <span class="mark"><img src="logo.jpg" alt="" /></span>
+            <span>
+              <div class="name">BUNNI</div>
+              <div class="tag">Reliability Personified</div>
+            </span>
+          </div>
+          <p class="foot-note">Bunni General Business PLC — exporter, roaster and distributor of premium Ethiopian coffee from Addis Ababa to the world.</p>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
+        <div class="foot-col">
+          <h4>Explore</h4>
           <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#coffee">Origins</a></li>
+            <li><a href="#heritage">Heritage</a></li>
+            <li><a href="#range">The Range</a></li>
             <li><a href="#process">Process</a></li>
+            <li><a href="#quote">Ethos</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Coffee Regions</h4>
+        <div class="foot-col">
+          <h4>Reach us</h4>
           <ul>
-            <li><a href="#coffee">Yirgacheffe</a></li>
-            <li><a href="#coffee">Sidamo</a></li>
-            <li><a href="#coffee">Harrar</a></li>
-            <li><a href="#coffee">Guji & Kaffa</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:info@bunnigeneralbusiness.com">Email Us</a></li>
-            <li><a href="#contact">Send Inquiry</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li><a href="tel:+251114218024">+251 11 42 18 24</a></li>
+            <li><a href="mailto:Bunni.plc@gmail.com">Bunni.plc@gmail.com</a></li>
+            <li>Addis Ababa, Ethiopia</li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Bunni General Business PLC. All rights reserved.</p>
-        <p>Addis Ababa, Ethiopia · <a href="https://www.aetherisinnovations.com" target="_blank">Built by Aetheris Innovations</a></p>
+      <div class="foot-bottom">
+        <div>© <span id="year"></span> Bunni General Business PLC — All rights reserved.</div>
+        <div class="amh">በእረንጓዴ በቀለ፣ በቡኒ ተቀላ።</div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Reveal on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    // Nav background on scroll
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Reveal on intersection
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-    document.querySelectorAll('.reveal, .service-card, .product-card, .step-card').forEach(el => {
-      el.classList.add('reveal');
-      observer.observe(el);
-    });
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.style.background = 'rgba(26, 14, 8, 0.98)';
-      } else {
-        nav.style.background = 'rgba(26, 14, 8, 0.95)';
-      }
-    });
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
