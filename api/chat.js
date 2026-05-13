@@ -1,5 +1,5 @@
 // Bilingual English-Amharic Chat API for Bunni PLC
-// Uses GPT-4o-mini — cheap ($0.15/1M input) and capable of multilingual chat
+// Uses Vercel AI Gateway -> GPT-4o-mini (cheap, multilingual)
 
 export default async function handler(req, res) {
   // CORS headers
@@ -60,17 +60,22 @@ If someone asks about pricing: "Our pricing depends on grade and volume — gree
 Important: If a visitor seems ready, offer to have a representative contact them directly.`;
 
   try {
-    const apiKey = process.env.OPENAI_API_KEY;
+    // Use Vercel AI Gateway key, fall back to direct OpenAI key
+    const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.OPENAI_API_KEY;
     if (!apiKey) return res.status(500).json({ error: 'API key not configured' });
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const isGateway = !!process.env.AI_GATEWAY_API_KEY;
+    const baseUrl = isGateway ? 'https://ai-gateway.vercel.sh/v1' : 'https://api.openai.com/v1';
+    const model = isGateway ? 'openai/gpt-4o-mini' : 'gpt-4o-mini';
+
+    const response = await fetch(`${baseUrl}/chat/completions`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model,
         messages: [
           { role: 'system', content: systemPrompt },
           ...messages.slice(-12),
@@ -83,7 +88,7 @@ Important: If a visitor seems ready, offer to have a representative contact them
     const data = await response.json();
 
     if (data.error) {
-      console.error('OpenAI error:', data.error);
+      console.error('AI Gateway error:', data.error);
       return res.status(500).json({ error: 'AI service error' });
     }
 
