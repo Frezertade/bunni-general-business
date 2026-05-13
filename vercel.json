@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.bunniplc.com"
+        }
+      ],
+      "destination": "https://bunniplc.com/$1",
+      "permanent": true
+    }
+  ]
+}
