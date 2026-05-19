@@ -43,7 +43,7 @@ Your goal is to warmly engage visitors and QUALIFY LEADS for Ethiopian coffee ex
 - ☕ Premium Ethiopian coffee — green & roasted
 - 📍 Addis Ababa, Ethiopia
 - 📦 Products: Green beans (Grade 1-4), Roasted (250g, 500g, 1kg)
-- 📞 +251 11 42 18 24
+- 📞 +251911421824
 - ✉️ Bunni.plc@gmail.com
 - 🌐 bunniplc.com
 - Tagline: "Born Green. Roasted Bunni." / "በአረንጓዴ ተቀላቅሎ በቡኒ ተጠበሰ"
